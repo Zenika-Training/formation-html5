@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# v 3.0
+#url des fichiers à cacher : html, js, images…
+error.html
+style.css
+scripts/dragDrop.js
+scripts/loadData.js
+scripts/localStorage.js
+ressources/images/logo-zenika.jpg
+
+NETWORK :
+#ressources accessibles uniquement en ligne (pas sauvegardées)
+index.html
+inscription.html
+
+FALLBACK :
+#ressources à renvoyer dans le cas de non disponibilité des ressources demandées.
+#syntaxe : url_fichier_original url_fichier_fallback
+index.html error.html
+inscription.html error.html

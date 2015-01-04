@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Inscription</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+
+        }
+
+        label, input{
+            display: block;
+        }
+
+        input {
+            box-sizing: border-box;
+            padding: 5px;
+            width: 200px;
+            min-height: 20px;
+            margin-bottom: 15px;
+            margin-top: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+            border: 1px solid #CCC;
+        }
+        input[type="submit"]{
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            transition: box-shadow 1s;
+            -webkit-transition: box-shadow 1s;
+            -mox-transition: box-shadow 1s;
+            -o-transition: box-shadow 1s;
+            -ms-transition: box-shadow 1s;
+            background-color: #942723;
+            color: white;
+        }
+        input[type="submit"]:hover{
+            box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+        }
+        input:required{
+            background: url("ressources/images/star.png") no-repeat right top;
+            background-size: 7px 7px;
+        }
+        form {
+            width: 200px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<script>
+    function check() {
+        var input1 = document.getElementById("email");
+        var input2 = document.getElementById("email2");
+        if (input1.value != input2.value) {
+            input2.setCustomValidity('Les adresses email doivent correspondre.');
+        } else {
+            input2.setCustomValidity('');
+        }
+    }
+</script>
+<body>
+<header>
+    <h1>What's Next</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+    </ul>
+</nav>
+
+<h2>
+Formulaire d'inscription
+</h2>
+
+<form autocomplete="on">
+    <label for="nom">Nom</label><input type="text" id="nom" placeholder="Dupont"required/>
+    <label for="prenom">Prénom</label><input type="text" id="prenom" placeholder="Jean" required/>
+    <label for="age">Date de naissance</label><input type="date" id="age"/>
+    <label for="org">Organisme</label><input type="text" id="org" placeholder="Entreprise ou école"/>
+    <label for="email">Email</label><input type="email" id="email" required placeholder="jean.dupont@mail.com"/>
+    <label for="email2">Répétez Email</label><input type="email" id="email2" oninput="check();" required/>
+    <label for="tel">Tel</label><input type="tel" id="tel" placeholder="(+33)611223344"/>
+    <label for="dates">Nombre de jours</label><input type="number" id="dates" min="1" max="2" value=1 oninput="prix.value=dates.value*quantity.value*120" required/>
+    <label for="quantity">Quantité</label><input type="number" id="quantity" name="quantity" min="1" max="5" value="1" oninput="prix.value=dates.value*quantity.value*120" required/>
+    Prix total : <output type="text" id="prix" name="prix">120</output> €
+    <input type="submit" value="Inscription"/>
+</form>
+
+<footer>
+    <img id="zen_logo" src="ressources/images/logo-zenika.jpg">
+</footer>
+
+</body>
+</html>
