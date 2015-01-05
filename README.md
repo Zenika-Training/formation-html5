@@ -1,21 +1,11 @@
-﻿# Organisation
+# Formation HTML5
 
-- Slides
-- CahierExercices
-- Exercices
-- Installation
-- SessionsNotes
+*Work in progress*
+- [ ] Init slides reveal.js
+- [ ] Ajouter issues d'améliorations de la formation (cf. mail & doc partagé)
+- [ ] Mise à jour slides (caniuse, ...)
 
-*Note : Chaque répertoire contient un README précisant son usage*
+## Imports repository SVN
+- [Formation HTML5 En Pratique (3 jours)](ODP/HTML5_EnPratique)
+- [Formation HTML5 Avancé (2 jours)](ODP/HTML5_Avance)
 
-# Installation
-
-Pour générer et afficher la formation, il est nécessaire d'avoir `node` et `npm` d'installé (voir [node.js](http://nodejs.org/)).
-
-Exécuter la commande suivante :
-`npm install`
-
-## Utilisation avec Docker
-
-Pour ceux qui veulent se passer de l'installation de `node` et `npm`, et qui ont `docker`, il suffit de lancer la commande suivante : 
-`docker run -it -v $PWD:/data --net=host --rm dockerfile/nodejs-bower-grunt npm install`
