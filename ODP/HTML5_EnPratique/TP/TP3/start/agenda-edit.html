@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>My Agenda</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+		<!-- TODO : mettre en forme la page comme sur la capture d écran -->
+	</style>
+    <script src="scripts/loadData.js"></script>
+</head>
+<script>
+
+    function displayEvt(evtId, value, categorie, tagId){
+        var puce = document.createElement("li");
+        puce.setAttribute("id", evtId);
+		puce.setAttribute("data-category", categorie);
+        //TODO: mettre en place le drag'n'drop entre #list_events et #my_events sur chaque puce
+		//1. ajouter les attributs nécessaire pour le drag
+		//2. gérer les événements 
+        puce.innerHTML = value;
+        document.getElementById(tagId).appendChild(puce);
+    }
+
+</script>
+<body onload="loadData();">
+
+<section>
+    <h2>All conferences</h2>
+    <ul id="list_events">
+    </ul>
+</section>
+<section>
+    <h2>My conferences</h2>
+    <ul id="my_events">
+    </ul>
+</section>
+
+</body>
+</html>

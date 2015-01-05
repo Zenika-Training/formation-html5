@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Mon agenda</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/loadData.js"></script>
+
+</head>
+<script>
+    function displayEvt(evtId, value, tagId){
+        var article = document.createElement("article");
+        article.setAttribute("id", evtId);
+
+        article.innerHTML = value;
+        //var contenu = document.createTextNode(value);
+        //article.appendChild(contenu);
+        document.getElementById(tagId).appendChild(article);
+    }
+
+</script>
+<body onload="loadDataInAgenda();">
+
+<section id="my_agenda">
+
+</section>
+
+</body>
+</html>
