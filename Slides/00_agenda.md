@@ -1,22 +1,33 @@
-# Titre de la formation
+# <img src="ressources/logo-html5.png" alt="HTML5" width="150"/>
 
 <!-- .slide: class="page-title" -->
 
 
 
-## Sommaire
+## Objectifs
+
+- Découvrir les possibilités offertes par le HTML5
+- Développer et débugger une application web
+- Créer des interfaces riches, interactives et ergonomiques
+- Intégrer et gérer du contenu multimédia
+- Permettre aux utilisateurs de sauvegarder leurs données
+
+
+
+## Plan
 
 <!-- .slide: id="master-toc" class="toc" -->
 
-- [Syntaxe de base](#/1)
-- [Code et tableaux](#/2)
-- [Positionnement des images](#/3)
-- [Animations et syntaxe avancée](#/4)
+- [Introduction](#/1)
+- [Nouvelles balises](#/2)
+- [CSS 3](#/3)
+- [JavaScript, le langage du web](#/4)
+- [Vers des application plus interactives](#/5)
+- [Gestion des données](#/6)
+- [Multimédia](#/7)
+- [Conclusion](#/8)
 
 
 
-## Logistique
-
-* Horaires
-* Déjeuner & pauses
-* Autres questions ?
+<!-- .slide: data-background="reveal/theme-zenika/images/questions.png" -->
+<!-- .slide: data-background-size="30%" -->
