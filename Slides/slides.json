@@ -1,7 +1,11 @@
 [
-  "00_agenda.md",
-  "01_bases.md",
-  "02_code.md",
-  "03_images.md",
-  "04_animations.md"
+  "01_plan.md",
+  "02_introduction.md",
+  "03_les_balises.md",
+  "04_css_3.md",
+  "05_javascript.md",
+  "06_applications_interactives.md",
+  "07_gestion_des_données.md",
+  "08_multimédia.md",
+  "09_conclusion.md"
 ]
