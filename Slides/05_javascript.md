@@ -1,29 +1,21 @@
-#HTML5 en pratique
+# Javascript, le langage du web
 
 <!-- .slide: class="page-title" -->
 
 
 
-## Javascript, le langage du web
-
-
-![](ressources/images/05_javascript-100002010000020000000200EB9C62D4.png)
-
-Notes :
-
-
-
-
 ## Plan
 
-- Introduction
-- Les balises
-- CSS 3
-- Javascript, le langage du web
-- Vers des application plus interactives
-- Gestion des données 
-- Multimédia
-- Conclusion
+<!-- .slide: class="toc" -->
+
+- [Introduction](#/1)
+- [Nouvelles balises](#/2)
+- [CSS 3](#/3)
+- **[JavaScript, le langage du web](#/4)**
+- [Vers des application plus interactives](#/5)
+- [Gestion des données](#/6)
+- [Multimédia](#/7)
+- [Conclusion](#/8)
 
 Notes :
 
@@ -40,7 +32,6 @@ Notes :
 	- Les paramètres implicites et les types invocations de fonctions
 	- Les bons outils pour travailler / débugger
 
-
 Notes :
 
 
@@ -49,28 +40,21 @@ Notes :
 ## Itérer sur un objet ou un tableau
 
 - En Javascript, un tableau est un objet. Il est possible de les parcourir l'un comme l'autre
-
-- 
 	- Parcourir un tableau
-
-
-- 
 	- Parcourir les propriétés d'un objet
 
-
-```
+```javascript
 var chiffres = ['un','deux','trois','quatre'];
 var size = chiffres.length;
-for(var i=0; i<size; i++){
-doSomething(chiffres[i]);
+for(var i=0; i < size; i++){
+    doSomething(chiffres[i]);
 }
 ```
 
-```
+```javascript
 for (var i in obj) {
-console.log(i + " = " + obj[i]);
+    console.log(i + " = ", obj[i]);
 }
-
 ```
 
 Notes :
@@ -81,20 +65,13 @@ Notes :
 ## Scope des variables
 
 - La portée ("scope") d'une variable détermine sa visibilité au sein du programme
-
 - Il existe deux scopes
-
-- 
 	- Scope global  
 - accessible dans tout le programme  
 - pas de mot-clé 
-
-
-- 
 	- Scope local  
 - accessible uniquement dans la fonction dans laquelle la variable est déclarée  
-- mot-clé var
-
+- mot-clé `var`
 
 Notes :
 
@@ -103,13 +80,13 @@ Notes :
 
 ## Scope des variables
 
-```
+```javscript
 // Global
 foo = "foo";
 
 function f() {
-bar = "bar"; // Global
-var answer = 42; // Local à f()
+    bar = "bar"; // Global
+    var answer = 42; // Local à f()
 }
 
 f();
@@ -133,21 +110,17 @@ Notes :
 ## Comparer des objets et variables
 
 - Javascript offre deux façons de comparer des valeurs
-	- == compare en forçant les types (égalité abstraite)
-	- === compare les valeurs (égalité stricte). A préférer !
-
-
+	- `==` compare en forçant les types (égalité abstraite)
+	- `===` compare les valeurs (égalité stricte). A préférer !
 
 - Les variables peuvent prendre certaines valeurs spéciales
 	- undefined est l'état par défaut d'une variable non définie
-	- null est l'état d'un objet défini mais qui n'a pas de valeur
-	- NaN signifie "Not a Number" et caractérise généralement le résultat d'une opération sans résultat (ex : Math.sqrt(-4))
+	- `null` est l'état d'un objet défini mais qui n'a pas de valeur
+	- `NaN` signifie "Not a Number" et caractérise généralement le résultat d'une opération sans résultat (ex : `Math.sqrt(-4)`)
 
-
-```
+```javascript
 "1" == 1; // true
 "1" === 1; // false
-
 ```
 
 Notes :
@@ -158,22 +131,18 @@ Notes :
 ## Fonctions et variables implicites
 
 - Les fonctions définissent dans leur contexte 2 variables implicites
+	- arguments représente les paramètres passés à la fonction.
 
-- 
-	- arguments représente les paramètres passés à la fonction.   
 Note : il est légal de passer un nombre de paramètres différent de celui défini dans la signature de la fonction.
 
-
-```
+```javscript
 function myFunc(a, b) {
-for (i in arguments) {
-console.log(i);
+    for (i in arguments) {
+        console.log(i);
+    }
 }
-}
-
 myFunc(1, 2, 3, 4);
 ```
-
 
 ![](ressources/images/05_javascript-10000000000000D1000000762AC55E74.png)
 
@@ -185,23 +154,15 @@ Notes :
 ## Fonctions et variables implicites
 
 - Les fonctions définissent dans leur contexte 2 variables implicites
-
-- 
-	- this représente le contexte d'appel d'une fonction  
-  
-  
-  
-  
-  
+	- `this` représente le contexte d'appel d'une fonction  
   
 Attention !  
-Contrairement au "this" des langages objets traditionnels, le "this" de Javascript dépend de la façon dont la fonction est appelée.
+Contrairement au `this` des langages objets traditionnels, le `this` de Javascript dépend de la façon dont la fonction est appelée.
 
-
-```
+```javascript
 foo = "foo";
-function f() {
-console.log(this.foo); // Erreur ? Pas toujours.
+    function f() {
+    console.log(this.foo); // Erreur ? Pas toujours.
 }
 ```
 
@@ -213,27 +174,21 @@ Notes :
 ## Fonctions et variables implicites
 
 - Le type de fonction détermine le contexte vu par this 
+	- Fonction top-level : `this` est l'objet window 
+	- Méthode appelée sur un objet : `this` est l'objet cible
 
-- 
-	- Fonction top-level : this est l'objet window 
-
-
-- 
-	- Méthode appelée sur un objet : this est l'objet cible
-
-
-```
+```javascript
 function f() {
-console.log("this="+this); 
+    console.log("this="+this); 
 }
 f(); // this=[object Window]
 ```
 
-```
+```javascript
 var obj = {
-f : function() {
-console.log("this="+this);
-}
+    f : function() {
+        console.log("this="+this);
+    }
 }
 obj.f(); // this=[object Object]
 ```
@@ -246,19 +201,16 @@ Notes :
 ## Fonctions et variables implicites
 
 - Le type de fonction détermine le contexte vu par this 
+	- Constructeur  : `this` est l'objet en cours de construction
+	- Fonction appelée par `apply` ou `call` : this réfère à l'objet passé en premier paramètre
 
-- 
-	- Constructeur  : this est l'objet en cours de construction
-	- Fonction appelée par apply ou call : this réfère à l'objet passé en premier paramètre
-
-
-```
+```javascript
 Math.min.apply(Math, [1, 2, 3, 4]);
 ```
 
-```
+```javascript
 function MyClass() {
-console.log("this="+this);
+    console.log("this="+this);
 }
 var instance = new MyClass(); // this=[object Object]
 ```
@@ -271,7 +223,6 @@ Notes :
 ## Debug et outils de qualité
 
 - Webkit developer tools : disponible sur tous les navigateurs basés sur Webkit (Chrome, Safari)
-
 - Firebug : plugin de Firefox avec de nombreuses fonctionnalités (visionnage du html, des scripts, des requêtes en fonction du temps, une console d'exécution de javascript...)
 - JSLint : outil d'analyse statique développé par D. Crockford. Valide le javascript soumis et teste de nombreuses mauvaises pratiques.
 - jsfiddle.net : application web pour tester des fragments de code. L'application permet d'incorporer la plupart des librairies connues.(jquery, extjs…) pour tester directement leurs fonctionnalités.
@@ -282,7 +233,6 @@ Notes :
 
 
 ## Chrome DevTools – Elements
-
 
 ![](ressources/images/05_javascript-10000201000003FC00000309EE1D3A9E.png)
 
@@ -309,7 +259,6 @@ Notes :
 
 ## Chrome DevTools – Resources
 
-
 ![](ressources/images/05_javascript-10000201000003FC00000309592972CB.png)
 
 Notes :
@@ -320,24 +269,18 @@ Notes :
 ## Chrome DevTools – Elements
 
 - Frames : Ressources statiques de l'application 
-	- 
-		- Fichiers
-		- Ressources
-		- Javascript
-		- Stylesheets
-		- Images
-
-
+    - Fichiers
+    - Ressources
+    - Javascript
+    - Stylesheets
+    - Images
 - Différents types de stockage : 
-	- 
-		- WebSQL Database 
-		- IndexedDB
-		- Localstorage
-		- Sessionstorage
-		- Cookies
-		- Application Cache
-
-
+    - WebSQL Database 
+    - IndexedDB
+    - Localstorage
+    - Sessionstorage
+    - Cookies
+    - Application Cache
 - La plupart des éléments accessibles ici sont modifiables et supprimables
 
 Notes :
@@ -346,7 +289,6 @@ Notes :
 
 
 ## Chrome DevTools – Network
-
 
 ![](ressources/images/05_javascript-10000201000003FC00000309701715B5.png)
 
@@ -358,21 +300,15 @@ Notes :
 ## Chrome DevTools – Network
 
 - Toutes les requêtes, filtrables par type 
-	- 
-		- Image
-		- xhr / ajax
-		- Scripts
-		- Websockets
-
-
+    - Image
+    - xhr / ajax
+    - Scripts
+    - Websockets
 - Détail de chacune des requêtes avec les entêtes, headers, réponse...
 - Nombreuses options accessibles via clic droit
-	- 
-		- Copy link
-		- Copy as cURL
-		- Copy as HAR
-
-
+    - Copy link
+    - Copy as cURL
+    - Copy as HAR
 - Les notifications de Server Sent Event ne sont pas visibles car elles sont gérées par le navigateur qui vous transmet seulement un évènement.
 
 Notes :
@@ -381,7 +317,6 @@ Notes :
 
 
 ## Chrome DevTools – Sources
-
 
 ![](ressources/images/05_javascript-10000201000003FC00000309DD3DF68B.png)
 
@@ -394,14 +329,11 @@ Notes :
 
 - Visualisation et édition (CSS, JS, HTML)
 - Debugger 
-	- 
-		- Possibilité de placer des breakpoints
-		- Accès au scope courant
-		- Watch de variable
-		- Callstack
-		- Debugger spécifique Workers
-
-
+    - Possibilité de placer des breakpoints
+    - Accès au scope courant
+    - Watch de variable
+    - Callstack
+    - Debugger spécifique Workers
 - Pretty print (bouton "{}") pour formattage et deminification
 - Pause on exceptions (bouton "pause")
 - Historique des modifications via clic droit
@@ -412,7 +344,6 @@ Notes :
 
 
 ## Chrome DevTools – Console
-
 
 ![](ressources/images/05_javascript-10000201000003FC000003092A54A265.png)
 
@@ -435,7 +366,6 @@ Notes :
 
 
 ## Chrome DevTools – General
-
 
 ![](ressources/images/05_javascript-10000201000003FC00000309179EC511.png)
 
@@ -463,7 +393,6 @@ Notes :
 
 ## Chrome Urls
 
-
 ![](ressources/images/05_javascript-10000201000003FE0000035D3E36474B.png)
 
 Notes :
@@ -475,23 +404,11 @@ Notes :
 
 - chrome://chrome-urls/
 - Extension : Google Chrome Service Pages
-	- 
-		- chrome://appcache-internals
-		- chrome://flags/
-		- chrome://indexeddb-internals/
-		- chrome://inspect
-		- chrome://webrtc-internals
-
-
-
-Notes :
-
-
-
-
-
-
-![](ressources/images/05_javascript-1000020100000100000001003A063607.png)
+    - chrome://appcache-internals
+    - chrome://flags/
+    - chrome://indexeddb-internals/
+    - chrome://inspect
+    - chrome://webrtc-internals
 
 Notes :
 

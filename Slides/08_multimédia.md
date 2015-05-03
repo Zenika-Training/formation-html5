@@ -1,29 +1,21 @@
-#HTML5 en pratique
+# Multimédia
 
 <!-- .slide: class="page-title" -->
 
 
 
-## Multimédia
-
-
-![](ressources/images/08_multimédia-100002010000020000000200EB9C62D4.png)
-
-Notes :
-
-
-
-
 ## Plan
 
-- Introduction
-- Les balises
-- CSS 3
-- Javascript, le langage du web
-- Vers des application plus interactives
-- Gestion des données 
-- Multimédia
-- Conclusion
+<!-- .slide: class="toc" -->
+
+- [Introduction](#/1)
+- [Nouvelles balises](#/2)
+- [CSS 3](#/3)
+- [JavaScript, le langage du web](#/4)
+- [Vers des application plus interactives](#/5)
+- [Gestion des données](#/6)
+- **[Multimédia](#/7)**
+- [Conclusion](#/8)
 
 Notes :
 
@@ -48,16 +40,15 @@ Notes :
 
 - Rendu (spécifique à chaque navigateur)
 
-```
-<audio controls="controls">
-<source src="music.mp3" type="audio/mp3" />
-</audio>
-```
-
-```
-<audio controls="controls" src="song.mp3"/>
+```html
+    <audio controls="controls">
+        <source src="music.mp3" type="audio/mp3" />
+    </audio>
 ```
 
+```html
+    <audio controls="controls" src="song.mp3"/>
+```
 
 ![](ressources/images/08_multimédia-100000000000013D00000031B191CCA0.png)
 
@@ -73,15 +64,14 @@ Notes :
 	- Mp3
 	- Autre 
 
-
 - Dans le cas où le navigateur n'est pas capable de lire un des formats ou ne supporte pas la balise audio, il est possible de spécifier un message d'avertissement
 
-```
-<audio controls="controls">
-<source src="music.ogg" type="audio/ogg" />
-<source src="music.mp3" type="audio/mp3" />
-Ce navigateur ne supporte pas l'élément audio.
-</audio>
+```html
+    <audio controls="controls">
+        <source src="music.ogg" type="audio/ogg" />
+        <source src="music.mp3" type="audio/mp3" />
+        Ce navigateur ne supporte pas l'élément audio.
+    </audio>
 ```
 
 Notes :
@@ -93,7 +83,7 @@ Notes :
 
 - La lecture de la piste peut être contrôlée par une API javascript
 
-```
+```javascript
 var player = document.getElementById('myPlayer') ;
 player.play();
 player.pause(),
@@ -112,15 +102,11 @@ Notes :
 ## Intégration d'une vidéo
 
 - HTML5 possède un tag natif pour la lecture de vidéos
-
-
 - Une application de démonstration est disponible sur le site du W3C
-
-
 
 ![](ressources/images/08_multimédia-10000000000001A9000000F14E83EB17.png)
 
-```
+```html
 <video controls src="myVideo.mp4"/>
 // controls donne accès à la barre de contrôle
 ```
@@ -139,16 +125,15 @@ Notes :
 
 - Un message et/ou composant alternatif peut être défini, si le navigateur ne peut lire aucune des sources proposées
 
-```
-<video ...>
-<source type="video/mp4" codecs="avc1.42E01E,mp4a.40.2">
-<source type="video/webm" codecs="vorbis,vp8">
-<source type="video/ogg" codecs="theora,vorbis">
-Ce navigateur ne supporte pas l'élément vidéo.
-<object width="…" height="…" 
-type="application/x-shockwave-flash" data="player.swf">
-</object>
-</video>
+```html
+    <video ...>
+        <source type="video/mp4" codecs="avc1.42E01E,mp4a.40.2">
+        <source type="video/webm" codecs="vorbis,vp8">
+        <source type="video/ogg" codecs="theora,vorbis">
+        Ce navigateur ne supporte pas l'élément vidéo.
+        <object width="…" height="…" type="application/x-shockwave-flash" data="player.swf">
+        </object>
+    </video>
 ```
 
 Notes :
@@ -160,7 +145,7 @@ Notes :
 
 - Une API javascript permet d'agir sur la vidéo
 
-```
+```javascript
 var player = document.getElementById('myPlayer') ;
 player.play();
 player.pause(),
@@ -187,7 +172,7 @@ Notes :
 
 - Par défaut, la largeur est de 300px et sa hauteur de 150px
 
-```
+```html
 <canvas width="400" height="400"></canvas>
 ```
 
@@ -201,7 +186,7 @@ Notes :
 - Pour manipuler l'élément, il faut dans un premier temps obtenir sa référence
 - Le contexte obtenu permet d'accéder à l'API de dessin
 
-```
+```html
 <body onload="draw()">
 <canvas id="canvas" width="400" height="400"></canvas>
 <script type="text/javascript">
@@ -210,6 +195,8 @@ var c=document.getElementById("canvas");
 if(c.getContext){
 var ctx= c.getContext("2d");
  (...)
+ </script>
+ </body>
 ```
 
 Notes :
@@ -225,18 +212,17 @@ Formes géométriques
 
 - Rectangles en définissant un point d'origine et une taille
 
-```
-ctx.moveTo(0,0);//Aller au point (0,0)
-ctx.lineTo(200,200);//Faire une ligne jusqu'au point (200,200)
-ctx.stroke();//Tracer
+```javascript
+ctx.moveTo(0,0); //Aller au point (0,0)
+ctx.lineTo(200,200); //Faire une ligne jusqu'au point (200,200)
+ctx.stroke(); //Tracer
 ```
 
-```
+```javascript
 ctx.fillRect(0,0,50,50); // Dessine un rectangle plein
 ctx.strokeRect(60,0,50,30); // Dessine un rectangle vide
 ctx.clearRect(20,20,10,10); //Efface une zone
 ```
-
 
 ![](ressources/images/08_multimédia-100000000000019300000081D8A11446.png)
 
@@ -252,14 +238,14 @@ Formes géométriques
 - Cercles ou arc de cercles
 - Les angles sont des valeurs en radians. Pour passer de degrés à radians, on utilise la formule suivante
 
-```
+```javascript
 ctx.arc(x,y,// centre du cercle
 rayon,// rayon
 angleDepart, angleFin,// angle
 sens) ;// sens inverse ou non
 ```
 
-```
+```javascript
 var radians = (Math.PI/180)*degres
 ```
 
@@ -272,8 +258,7 @@ Notes :
   
 Formes géométriques
 
-
-```
+```javascript
 ctx.arc(50,50,50,0,Math.PI*2,false); 
 ctx.stroke();
 ctx.arc(50,50,110,Math.PI*(1/4),(Math.PI),false); 
@@ -283,7 +268,6 @@ ctx.fill();
 ctx.arc(50,50,230,0,(Math.PI)*0.5,true);
 ctx.fill();
 ```
-
 
 ![](ressources/images/08_multimédia-10000000000001F40000007F8A00E38B.png)
 
@@ -299,11 +283,10 @@ Formes géométriques
 - Pour des formes plus complexes, il existe les courbes de bézier et les courbes quadratiques qui sont un peu plus complexes d'utilisation
 - Des arrondis se forment en fonction de points de contrôle, un seul pour les courbes quadratiques et deux pour les courbes de bézier
 
-```
+```javascript
 quadraticCurveTo(ctlX, ctlY, x, y);
 bezierCurveTo(ctlX1, ctlY1, ctlX2, ctlY2, x, y)
 ```
-
 
 ![](ressources/images/08_multimédia-10000000000000BE000000BE150053F6.png)
 
@@ -316,8 +299,7 @@ Notes :
   
 Formes géométriques
 
-
-```
+```javascript
 ctx.moveTo(75,25);
 ctx.quadraticCurveTo(25,25,25,62.5);
 ctx.quadraticCurveTo(25,100,50,100);
@@ -327,7 +309,6 @@ ctx.quadraticCurveTo(125,100,125,62.5);
 ctx.quadraticCurveTo(125,25,75,25);
 ctx.stroke();
 ```
-
 
 ![](ressources/images/08_multimédia-10000000000000C2000000876DA21050.png)
 
@@ -343,15 +324,14 @@ Texte
 - Il est possible d'ajouter du texte, rempli ou non
 - La police et la taille utilisée se définissent avec la propriété font
 
-```
+```javascript
 fillText(Texte, x, y); // texte plein
-strokeText(Texte, x, y);// texte vide
+strokeText(Texte, x, y); // texte vide
 ```
-
 
 ![](ressources/images/08_multimédia-10000000000000C300000058C5772731.png)
 
-```
+```javascript
 ctx.font = "30px Arial";
 ctx.fillText("Mon texte",0,0); 
 ```
@@ -367,9 +347,7 @@ Images
 
 - Pour charger des images, il existe plusieurs solutions
 	- En chargeant les images en HTML
-
 	- Ou entièrement en Javascript
-
 - La méthode drawImage() permet aussi de redimensionner ou de couper une partie de l'image
 
 ```
@@ -378,15 +356,14 @@ Images
 ctx.drawImage(document.getElementById("img"),x,y);
 ```
 
-```
+```javascript
 var img=new Image();
 img.src='images/zenika.jpg';
 ctx.drawImage(img,30,30);
 ```
 
-```
+```javascript
 drawImage(src, x, y, largeur, hauteur)
-
 ```
 
 Notes :
@@ -398,12 +375,9 @@ Notes :
   
 Images
 
-
-```
+```javascript
 drawImage(src, sX, sY, sLargeur, sHauteur, dX, dY, dLargeur, dHauteur);
-
 ```
-
 
 ![](ressources/images/08_multimédia-100000000000012C00000122B0DA9752.jpg)
 
@@ -416,19 +390,17 @@ Notes :
   
 Style
 
-
 - Plusieurs propriétés permettent de personnaliser le style du canvas
 - Les méthodes save() et restore() sont particulièrement utiles, elles permettent de sauver puis de restaurer un style courant
 
-```
+```javascript
 strokeStyle="#FF0098" //Couleur des contours
 fillStyle="black"//Couleur de remplissage
 GlobalAlpha="0,6"//Transparence
 LineWidth=10//Epaisseur de ligne
-
 ```
 
-```
+```javascript
 ctx.strokestyle="blue"; ctx.fillstyle="black";
 //Rectangle
 ctx.save();
@@ -436,9 +408,7 @@ ctx.strokestyle="black" ; ctx.fillstyle="blue";
 //Rectangle
 ctx.restore();
 //Rectangle
-
 ```
-
 
 ![](ressources/images/08_multimédia-100000000000008C0000016CB27E5F72.png)
 
@@ -456,34 +426,16 @@ Animation
 - Pour arrêter l'animation, clearInterval() est utilisé
 - Animer le canvas en fonction d'événements souris ou clavier du javascript permet de faire des jeux
 
-```
+```javascript
 setInterval(update,500); // Appelle la méthode update toutes les 
 // 500 Millisecondes
 ```
 
-```
+```javascript
 var anim = setInterval(update, 500);
 (...) 
 clearInterval(anim) ;
 ```
-
-Notes :
-
-
-
-
-
-
-![](ressources/images/08_multimédia-1000020100000100000001003A063607.png)
-
-Notes :
-
-
-
-
-
-
-![](ressources/images/08_multimédia-100002010000015500000155DEE48379.png)
 
 Notes :
 

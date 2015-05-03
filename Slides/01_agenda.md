@@ -13,7 +13,6 @@
 - Permettre aux utilisateurs de sauvegarder leurs données
 
 
-
 ## Plan
 
 <!-- .slide: id="master-toc" class="toc" -->
@@ -29,5 +28,4 @@
 
 
 
-<!-- .slide: data-background="reveal/theme-zenika/images/questions.png" -->
-<!-- .slide: data-background-size="30%" -->
+<!-- .slide: class="page-questions" -->

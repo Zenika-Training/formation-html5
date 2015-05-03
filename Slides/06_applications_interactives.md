@@ -1,29 +1,21 @@
-#HTML5 en pratique
+# Applications interactives
 
 <!-- .slide: class="page-title" -->
 
 
 
-## Applications interactives
-
-
-![](ressources/images/06_applications_interactives-100002010000020000000200EB9C62D4.png)
-
-Notes :
-
-
-
-
 ## Plan
 
-- Introduction
-- Les balises
-- CSS 3
-- Javascript, le langage du web
-- Vers des application plus interactives
-- Gestion des données
-- Multimédia
-- Conclusion
+<!-- .slide: class="toc" -->
+
+- [Introduction](#/1)
+- [Nouvelles balises](#/2)
+- [CSS 3](#/3)
+- [JavaScript, le langage du web](#/4)
+- **[Vers des application plus interactives](#/5)**
+- [Gestion des données](#/6)
+- [Multimédia](#/7)
+- [Conclusion](#/8)
 
 Notes :
 
@@ -45,10 +37,7 @@ Notes :
 - La géolocalisation permet de connaître la localisation de l'utilisateur
 	- Marketing de proximité
 	- Communautés
-
-
 - Nécessite l'accord de l'utilisateur
-
 
 ![](ressources/images/06_applications_interactives-10000201000001F0000000A9385BE2CA.png)
 
@@ -64,19 +53,15 @@ Notes :
 	- à une triangulation GSM/3G
 	- l'adresse IP du point de connexion
 	- triangulation wifi
-
-
 - Elle est accessible via l'objet navigator.geolocation
 	- Pas toujours disponible !
 
-
-```
+```javascript
 var geoloc = navigator.geolocation;
 if (geoloc) {
 …
 }
 ```
-
 
 ![](ressources/images/06_applications_interactives-1000020100000080000000809F5B811C.png)
 
@@ -88,11 +73,10 @@ Notes :
 ## Géolocalisation
 
 - Deux méthodes pour récupérer la position
-	- getCurrentPosition()   
+	- `getCurrentPosition() `  
 Détermine la position courante de l'utilisateur
-	- watchPosition()  
+	- `watchPosition()`  
 Suit le déplacement de l'utilisateur en temps réel
-
 
 - Les deux méthodes acceptent les mêmes paramètres
 	- une fonction callback en cas de succès
@@ -101,8 +85,6 @@ Suit le déplacement de l'utilisateur en temps réel
 		- timeout (en ms)
 		- maximumAge (en ms)
 		- enableHighAccuracy (true|false)
-
-
 
 Notes :
 
@@ -121,7 +103,6 @@ Notes :
 	- coords.speed (en mètres / seconde)
 	- timestamp
 
-
 Notes :
 
 
@@ -129,20 +110,20 @@ Notes :
 
 ## Géolocalisation
 
-```
+```javascript
 function onSuccess(position) {
-var lat = position.coords.latitude;
-var lng = position.coords.longitude;
-window.alert(lat + "," + lng);
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    window.alert(lat + "," + lng);
 };
 
 function onError(error) {
-switch(error.code) {
-case error.TIMEOUT: (…); break;
-case error.PERMISSION_DENIED: (…); break;
-case error.POSITION_UNAVAILABLE: (…); break;
-case error.UNKNOWN_ERROR: (…); break;
-}
+    switch(error.code) {
+        case error.TIMEOUT: (…); break;
+        case error.PERMISSION_DENIED: (…); break;
+        case error.POSITION_UNAVAILABLE: (…); break;
+        case error.UNKNOWN_ERROR: (…); break;
+    }
 };
 
 navigator.geolocation
@@ -160,20 +141,19 @@ Notes :
 	- Carte statique, sans contrôles
 	- Facile à intégrer
 
-
 ```
 function onSuccess(pos) {
-var lat = pos.coords.latitude;
-var lng = pos.coords.longitude;
-var latlng = lat + "," + lng;
+    var lat = pos.coords.latitude;
+    var lng = pos.coords.longitude;
+    var latlng = lat + "," + lng;
 
-var mapUrl = 
-"http://maps.googleapis.com/maps/api/staticmap"+
-"?center="+latlng+
-"&zoom=14&size=400x300&sensor=false"
+    var mapUrl = 
+    "http://maps.googleapis.com/maps/api/staticmap"+
+    "?center="+latlng+
+    "&zoom=14&size=400x300&sensor=false"
 
-var mapHolder = document.getElementById("map");
-mapHolder.innerHTML = "<img src='"+mapUrl+"'/>";
+    var mapHolder = document.getElementById("map");
+    mapHolder.innerHTML = "<img src='"+mapUrl+"'/>";
 };
 ```
 
@@ -185,29 +165,26 @@ Notes :
 ## Géolocalisation
 
 - Pour une carte dynamique, il faut utiliser les API Google Maps
-
-- 
 	- Affichage sur une carte dans une div d'id « mapCanvas » 
 
+```html
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+```
 
-```
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-```
-
-```
+```javascript
 navigator.geolocation.getCurrentPosition(function(pos) {
-var lat = pos.coords.latitude;
-var lng = pos.coords.longitude;
-var myPosition = new google.maps.LatLng(lat,lng);
+    var lat = pos.coords.latitude;
+    var lng = pos.coords.longitude;
+    var myPosition = new google.maps.LatLng(lat,lng);
 
-var opts = {
-zoom : 8,
-center : myPosition,
-mapTypeId : google.maps.MapTypeId.ROADMAP
-};
+    var opts = {
+        zoom : 8,
+        center : myPosition,
+        mapTypeId : google.maps.MapTypeId.ROADMAP
+    };
 
-var mapHolder = document.getElementById("mapCanvas")
-var map = new google.maps.Map(mapHolder, opts);
+    var mapHolder = document.getElementById("mapCanvas")
+    var map = new google.maps.Map(mapHolder, opts);
 });
 ```
 
@@ -219,7 +196,6 @@ Notes :
 ## Géolocalisation
 
 - Compatibilité
-
 
 ![](ressources/images/06_applications_interactives-10000201000003AA0000017544621C3E.png)
 
@@ -236,8 +212,6 @@ Notes :
 	- Déplacement d'éléments au sein du navigateur
 	- Déplacement d'éléments externes vers le navigateur 
 
-
-
 ![](ressources/images/06_applications_interactives-10000201000002A100000143A638AAF9.png)
 
 Notes :
@@ -249,14 +223,11 @@ Notes :
 
 - Tout élément peut être déplacé
 	- Il suffit de lui ajouter l'attribut "draggable"
-
-
 - Tout élément peut servir de zone de réception ("drop")
 
+```html
+    <div draggable="true"> … </div>
 ```
-<div draggable="true"> … </div>
-```
-
 
 ![](ressources/images/06_applications_interactives-100002010000016F000000D057DACE46.png)
 
@@ -274,16 +245,14 @@ Notes :
 	- drag : action en cours
 	- dragend : fin de l'action
 
-
 - Événements relatifs à l'élément récepteur
 	- dragenter : début de survol
 	- dragover : survol en cours
 	- dragleave : fin de survol
 	- drop : élément lâché 
 
-
-```
-<element>.on<event> = function() { … }
+```javascript
+    <element>.on<event> = function() { … }
 ```
 
 Notes :
@@ -297,7 +266,7 @@ Notes :
 
 - Configuration de l'élément déplacé
 
-```
+```javascript
 var item = document.getElementById("item");
 
 // Activer le drag'n'drop
@@ -305,11 +274,11 @@ item.setAttribute('draggable', true);
 
 // Changement d'opacité pendant le déplacement
 item.ondragstart = function(e) {
-this.style.opacity = '0.4';
+    this.style.opacity = '0.4';
 };
 
 item.ondragend = function(e) {
-this.style.opacity = '1';
+    this.style.opacity = '1';
 };
 ```
 
@@ -325,16 +294,15 @@ Notes :
 - Configuration de la zone de réception
 	- Par défaut, les éléments ne supportent pas le "drop" ; il faut désactiver ce comportement sur l'événement ondragover
 
-
-```
+```javascript
 var dropzone = document.getElementById("dropzone");
 
 zone.ondragover = function(e) {
-return false; // ou e.preventDefault(); OBLIGATOIRE !
+    return false; // ou e.preventDefault(); OBLIGATOIRE !
 };
 
 zone.ondrop = function(e) {
-// ...
+    // ...
 };
 ```
 
@@ -348,7 +316,6 @@ Return false; permet de ne pas lancer l'événement aux parents de l'élément.
 ## Drag'n'drop
 
 - Compatibilité
-
 
 ![](ressources/images/06_applications_interactives-10000201000003AB000001731E9F2D10.png)
 
@@ -368,15 +335,14 @@ Transfert de données intra-navigateur
 	- clearData(mime-type)
 	- types : mime-types des données transmises (tableau)
 
-
-```
+```javascript
 item.ondragstart = function(e) {
-e.dataTransfer.setData('text/plain', this.innerText);
+    e.dataTransfer.setData('text/plain', this.innerText);
 };
 
 zone.ondrop = function(e) {
-e.preventDefault();
-this.innerHTML += e.dataTransfer.getData('text/plain');
+    e.preventDefault();
+    this.innerHTML += e.dataTransfer.getData('text/plain');
 };
 ```
 
@@ -390,21 +356,20 @@ Notes :
 Transfert de fichiers vers le navigateur
 
 - La propriété dataTransfer.files contient les descripteurs des fichiers posés dans la zone de réception
-	- lastModifiedDate
-	- name : nom court, sans le chemin
-	- size : taille en octets
-	- type : type mime
+    - lastModifiedDate
+    - name : nom court, sans le chemin
+    - size : taille en octets
+    - type : type mime
 
-
-```
+```javascript
 zone.ondrop = function(e) {
-e.preventDefault();
-var files = e.dataTransfer.files;
-this.innerHTML = "";
-for (var f=0; f<files.length; f++) {
-var file = files[f];
-this.innerHTML += file.name + "<br/>";
-}
+    e.preventDefault();
+    var files = e.dataTransfer.files;
+    this.innerHTML = "";
+    for (var f=0; f < files.length; f++) {
+        var file = files[f];
+        this.innerHTML += file.name + "<br/>";
+    }
 };
 ```
 
@@ -422,16 +387,14 @@ Transfert de fichiers vers le navigateur
 	- readAsBinaryString(file) : lit le fichier en binaire
 	- readAsText(file, [charset]) : lit le fichier en UTF8
 
-
 - La progression est monitorée par des méthodes callback
 	- onabort(), onerror(), onload(), onprogress()
 	- Paramètre de type ProgressEvent contenant le résultat
 
-
-```
+```javascript
 reader.onload = function(e) {
-var url = e.target.result;
-var progress = e.loaded + "/" + e.total;
+    var url = e.target.result;
+    var progress = e.loaded + "/" + e.total;
 }
 ```
 
@@ -444,24 +407,24 @@ Notes :
   
 Transfert de fichiers vers le navigateur
 
-```
+```javascript
 zone.ondrop = function(e) {
-e.preventDefault();
+    e.preventDefault();
 
-var files = e.dataTransfer.files;
-this.innerHTML = "";
-for (var f=0; f<files.length; f++) {
-var file = files[f];
-var reader = new FileReader();
-reader.onload = function (event) {
-var img = document.createElement("img");
-img.setAttribute('src', event.target.result);
-this.appendChild(img);
-};
-reader.readAsDataURL(file);
-}
-
-return false;
+    var files = e.dataTransfer.files;
+    this.innerHTML = "";
+    for (var f=0; f < files.length; f++) {
+        var file = files[f];
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            img.setAttribute('src', event.target.result);
+            this.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    }
+    
+    return false;
 };
 ```
 
@@ -476,7 +439,6 @@ Transfert de fichiers vers le navigateur
 
 ![](ressources/images/06_applications_interactives-1000020100000192000000FE4505E91C.png)
 
-
 ![](ressources/images/06_applications_interactives-1000020100000192000000FABE4C6277.png)
 
 Notes :
@@ -489,7 +451,6 @@ Notes :
 Transfert de fichiers vers le navigateur
 
 - Compatibilité
-
 
 ![](ressources/images/06_applications_interactives-10000201000003A9000001759316FB20.png)
 
@@ -504,26 +465,8 @@ Transfert de fichiers vers le navigateur
 
 - Compatibilité
 
-
 ![](ressources/images/06_applications_interactives-10000201000003AC000001666F7F965B.png)
 
-Notes :
-
-
-
-
-
-
-![](ressources/images/06_applications_interactives-1000020100000100000001003A063607.png)
-
-Notes :
-
-
-
-
-
-
-![](ressources/images/06_applications_interactives-1000020100000155000001557B096267.png)
 
 Notes :
 
@@ -534,4 +477,4 @@ Notes :
 
 
 
-<!-- .slide: class="page-tp1" -->
+<!-- .slide: class="page-tp3" -->

@@ -17,6 +17,9 @@
 - [Multimédia](#/7)
 - [Conclusion](#/8)
 
+Notes :
+
+
 
 
 ## Un petit peu d'histoire
@@ -28,6 +31,9 @@
 - 2000 - 2006 : W3C abandonne la spécification de HTML au profit de XHTML
 - 2004 : Création du WHATWG, Web Hypertext Application Technology Working Group, reprend la spécification HTML
 
+Notes :
+
+
 
 
 ## Un petit peu d'histoire
@@ -37,12 +43,18 @@
 - 28 octobre 2014 : Spécification HTML 5.0 terminée
 - HTML 5.1 prévue pour 2016
 
+Notes :
+
+
 
 
 ## "HTML5" : HTML5 + JavaScript + CSS3
 
 
 ![Logos du web](ressources/logos-web.png)
+
+Notes :
+
 
 
 
@@ -55,6 +67,9 @@
   - http://caniuse.com/
 
 <iframe src="http://html5test.com/" width="100%" height="30%"></iframe>
+
+Notes :
+
 
 
 
@@ -77,6 +92,9 @@
 </html>
 ```
 
+Notes :
+
+
 
 
 ## CSS
@@ -94,6 +112,9 @@ p {
   color : black;
 }
 ```
+
+Notes :
+
 
 
 
@@ -117,6 +138,9 @@ p {
 var paragraph1 = document.getElementById("paragraph1");
 paragraph1.innerHTML("hello world");
 ```
+
+Notes :
+
 
 
 

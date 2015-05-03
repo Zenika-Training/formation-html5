@@ -1,29 +1,21 @@
-#HTML5 en pratique
+# Gestion des données
 
 <!-- .slide: class="page-title" -->
 
 
 
-## Gestion des données
-
-
-![](ressources/images/07_gestion_des_données-100002010000020000000200EB9C62D4.png)
-
-Notes :
-
-
-
-
 ## Plan
 
-- Introduction
-- Les balises
-- CSS 3
-- Javascript, le langage du web
-- Vers des application plus interactives 
-- Gestion des données
-- Multimédia
-- Conclusion
+<!-- .slide: class="toc" -->
+
+- [Introduction](#/1)
+- [Nouvelles balises](#/2)
+- [CSS 3](#/3)
+- [JavaScript, le langage du web](#/4)
+- [Vers des application plus interactives](#/5)
+- **[Gestion des données](#/6)**
+- [Multimédia](#/7)
+- [Conclusion](#/8)
 
 Notes :
 
@@ -47,15 +39,13 @@ Notes :
 	- Le "session store", temporaire, qui est propre à chaque session de navigation (fenêtre ou onglet du navigateur)
 	- Le "local store", permanent, qui est propre à un domaine
 
-
-```
+```javascript
 var storage = window.sessionStorage;
 ```
 
-```
+```javascript
 var storage = window.localStorage;
 ```
-
 
 ![](ressources/images/07_gestion_des_données-100002010000008000000080B9A1F0AA.png)
 
@@ -77,8 +67,8 @@ Notes :
 - Les Stores étant des tableaux, on peut également utiliser la notation avec des crochets
 - Compatible Chrome 4+, Safari 4+, Opera 10.5+, Firefox 3.5+, IE 8+
 
-```
-window.sessionStorage[<key>] = <value>;
+```javascript
+    window.sessionStorage[<key>] = <value>;
 ```
 
 Notes :
@@ -90,15 +80,15 @@ Notes :
   
 Exemple
 
-```
-<h2>My web library</h2>
-<form onsubmit="return saveBook();">
-<label for="bookName">Book :</label>
-<input type="text" id="bookName"/>
-<input type="submit" value="Add"/>
-</form>
+```html
+    <h2>My web library</h2>
+    <form onsubmit="return saveBook();">
+    <label for="bookName">Book :</label>
+    <input type="text" id="bookName"/>
+    <input type="submit" value="Add"/>
+    </form>
 
-<ul id="books"></ul>
+    <ul id="books"></ul>
 ```
 
 
@@ -113,26 +103,26 @@ Notes :
   
 Exemple
 
-```
+```javascript
 var storage = window.localStorage; // ou window.sessionStorage
 
 window.onload = function() {
-for(var i=0; i<storage.length; i++) {
-displayBook(storage.getItem(i));
-}
+    for(var i=0; i < storage.length; i++) {
+        displayBook(storage.getItem(i));
+    }
 }
 
 function displayBook(book){
-var contenu = document.createTextNode(book);
-var puce = document.createElement("li");
-puce.appendChild(contenu);
-document.getElementById("books").appendChild(puce);
+    var contenu = document.createTextNode(book);
+    var puce = document.createElement("li");
+    puce.appendChild(contenu);
+    document.getElementById("books").appendChild(puce);
 }
 
 function saveBook() {
-var book = document.getElementById("bookName").value;
-storage.setItem(storage.length, book);
-displayBook(book);
+    var book = document.getElementById("bookName").value;
+    storage.setItem(storage.length, book);
+    displayBook(book);
 }
 ```
 
@@ -166,8 +156,7 @@ Principes
 	- Nom
 	- Taille estimée (en octets)
 
-
-```
+```javascript
 var db = openDatabase('mydb', '1.0', 'Books', 1024 * 1024);
 
 if (db) {…}
@@ -186,12 +175,11 @@ Transactions
 	- La fonction callback est exécutée dans la transaction
 	- Le paramètre tx fournit la méthode executeSql, qui permet d'effectuer les opérations SQL de lecture et écriture
 
-
-```
+```javascript
 tx.executeSql( query, [params], [callback] );
 ```
 
-```
+```javascript
 db.transaction(function (tx) {
 ...
 });
@@ -206,26 +194,24 @@ Notes :
   
 Exemple
 
-```
+```javascript
 var db = openDatabase('mydb', '1.0', 'Books', 1024 * 1024);
 
 if (db) {
 
-db.transaction(function (tx) {
+    db.transaction(function (tx) {
 
-// Ecriture
-tx.executeSql("CREATE TABLE BOOK   
- (ID unique, NAME text");
-tx.executeSql("INSERT INTO BOOK (ID,NAME)  
- VALUES (1,'Dune')");
+        // Ecriture
+        tx.executeSql("CREATE TABLE BOOK(ID unique, NAME text");
+        tx.executeSql("INSERT INTO BOOK (ID,NAME) VALUES (1,'Dune')");
 
-// Requêtage
-tx.executeSql("SELECT * FROM BOOK", [], 
-function (tx, books) {
-window.alert(books); 
-});
+        // Requêtage
+        tx.executeSql("SELECT * FROM BOOK", [], 
+        function (tx, books) {
+            window.alert(books);
+        });
 
-});
+    });
 
 }
 ```
@@ -257,7 +243,6 @@ Conclusion
 - Partiellement implémenté et/ou buggué
 - Ne pas utiliser !
 
-
 ![](ressources/images/07_gestion_des_données-1000020100000080000000802D752439.png)
 
 Notes :
@@ -277,10 +262,9 @@ IndexedDB
 	- APIs asynchrone et synchrone
 		- L'API synchrone est cependant peu implémentée et sujette à abandon par le W3C
 
-
 - Support : chrome 11+, Firefox 4+, IE 10
 
-```
+```javascript
 var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
 ```
 
@@ -297,25 +281,25 @@ IndexedDB - création
 
 - Création d'un objet
 
-```
+```javascript
 var request = indexedDB.open('AddressBook' , 1); //version 1
 request.onsuccess = function(evt) {
-db = request.result;
+    db = request.result;
 };
 request.onupgradeneeded = function(evt){
-//Alter table
-var reqVersion = db.setVersion('1');
-reqVersion.onsuccess = function (evt) {//operations...}
+    //Alter table
+    var reqVersion = db.setVersion('1');
+    reqVersion.onsuccess = function (evt) {//operations...}
 }
 request.onerror = function(evt) {
-console.log("Database error code: " + evt.target.errorCode);
+    console.log("Database error code: " + evt.target.errorCode);
 };
 ```
 
-```
+```javascript
 var contact = db.createObjectStore(
-'contact', 
-{keyPath:'id', autoIncrement:true} 
+    'contact', 
+    {keyPath:'id', autoIncrement:true} 
 );
 ```
 
@@ -329,30 +313,25 @@ Notes :
 IndexedDB – transaction et opérations
 
 - Création d'index
-
 - Transactions : opérations
 	- Ajout de données
-
-
-- 
 	- Récupération d'objet avec une clé
 
-
-```
+```javascript
 contact.createIndex("name", "name", { unique: false });
 contact.createIndex("email", "email", { unique: true });
 ```
 
-```
+```javascript
 var tx = db.transaction(["contact", "readwrite"]);
 var store = tx.objectStore('contact');
 var contact1 = store.add({name: 'Joe', email: 'joe@mail.com'});
 ```
 
-```
+```javascript
 var object = store.get(1);
-object.onsuccess = function(evt) { 
-var object_name = request.result.name; 
+    object.onsuccess = function(evt) { 
+    var object_name = request.result.name; 
 };
 ```
 
@@ -372,9 +351,6 @@ IndexedDB
 		- Peu implémentée encore
 		- En cours de rédaction → documentation à suivre
 
-
-
-
 ![](ressources/images/07_gestion_des_données-10000000000002B1000001002FCC5DFA.png)
 
 Notes :
@@ -388,12 +364,11 @@ Notes :
 	- Autorise une utilisation nomade et/ou déconnectée
 	- Stocke les ressources en cache (HTML, scripts, images...)
 
-
 - Détection de l'état de la connexion à Internet
 
 - Compatibilité : Chrome 19, Safari 5.1, Firefox 3.6, Opera 12
 
-```
+```javascript
 if (navigator.onLine) { … }
 
 window.addEventListener('online', function(e) {
@@ -404,7 +379,6 @@ window.addEventListener('offline', function(e) {
 // Queue up events for server.
 }, false);
 ```
-
 
 ![](ressources/images/07_gestion_des_données-1000020100000080000000805AB49031.png)
 
@@ -420,12 +394,12 @@ Le Manifeste
 - Un Manifeste liste les ressources à mettre en cache
 	- Fichier texte brut
 	- Extension .appcache
-	- Déclaré au niveau de la balise <html>
+	- Déclaré au niveau de la balise  `<html>`
 
 - Toutes les pages de l'application devant fonctionner offline référencent le même manifeste
 
-```
-<html manifest="/offline.appcache">
+```html
+    <html manifest="/offline.appcache">
 ```
 
 Notes :
@@ -483,7 +457,6 @@ Le Manifeste - astuces
 - Chaque page HTML référençant un manifeste est automatiquement mise en cache
 	- Pas besoin de lister toutes les pages HTML !
 
-
 - Pour empêcher l'utilisateur d'utiliser l'application, ou une partie de l'application, hors-ligne, il suffit de rediriger toutes ses pages vers une même ressource alternative
 
 ```
@@ -504,16 +477,15 @@ Le Manifeste – type MIME
 	- Apache httpd
 	- Application web Java (web.xml)
 
-
 ```
 AddType text/cache-manifest .appcache
 ```
 
 ```
-<mime-mapping>
-<extension>appcache</extension>
-<mime-type>text/cache-manifest</mime-type>
-</mime-mapping>
+    <mime-mapping>
+    <extension>appcache</extension>
+    <mime-type>text/cache-manifest</mime-type>
+    </mime-mapping>
 ```
 
 Notes :
@@ -527,45 +499,23 @@ Le Manifeste – mise en cache
 
 - Attention à ne pas mettre le manifeste lui-même en cache !
 	- Ajouter un commentaire qui change à chaque version
-
-
-- 
 	- Apache httpd
 
+```
+    <IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/cache-manifest "access plus 0 seconds"
+    </IfModule>
+```
 
 ```
-<IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType text/cache-manifest "access plus 0 seconds"
-</IfModule>
-```
+    CACHE MANIFEST
+    # 2012-08-01 14:00
 
-```
-CACHE MANIFEST
-# 2012-08-01 14:00
-
-CACHE
+    CACHE
 ...
 
 ```
-
-Notes :
-
-
-
-
-
-
-![](ressources/images/07_gestion_des_données-1000020100000100000001003A063607.png)
-
-Notes :
-
-
-
-
-
-
-![](ressources/images/07_gestion_des_données-100002010000015500000155586F39BA.png)
 
 Notes :
 
@@ -576,4 +526,4 @@ Notes :
 
 
 
-<!-- .slide: class="page-tp1" -->
+<!-- .slide: class="page-tp4" -->

@@ -17,6 +17,9 @@
 - [Multimédia](#/7)
 - [Conclusion](#/8)
 
+Notes :
+
+
 
 
 ## Un Doctype simplifié
@@ -24,9 +27,12 @@
 - HTML5 utilise un tout nouveau DOCTYPE simplifié
 - Les navigateurs utilisent alors un mode de rendu respectueux des standards
 
-```
+```html
 <!doctype html>
 ```
+
+Notes :
+
 
 
 
@@ -39,6 +45,9 @@
   - `<font>`
   - `<strike>`
   - `<tt>`
+
+Notes :
+
 
 
 
@@ -54,6 +63,9 @@
   - `<applet>` → `<object>`
   - `<isindex>` → `<input>`
   - `<dir>` → `<ul>`
+
+Notes :
+
 
 
 
@@ -71,6 +83,9 @@
   - Illustrations
   - Autre
 
+Notes :
+
+
 
 
 ## Structure de document
@@ -82,11 +97,17 @@
 - `aside` : barre latérale, contenu additionnel relatif à un élément
 - `nav` : éléments de navigation intra- ou inter-documents
 
+Notes :
+
+
 
 
 ## Structure de document
 
 ![Structure de document](ressources/structure-html.gif)
+
+Notes :
+
 
 
 
@@ -108,6 +129,9 @@
 <footer>...</footer>
 ```
 
+Notes :
+
+
 
 
 ## Bloc masquable
@@ -127,6 +151,9 @@
   Lorem ipsum dolor sit amet, consectetur adipisicing elit...
 </details>
 
+Notes :
+
+
 
 
 ## Marqueurs de texte
@@ -143,6 +170,9 @@ Cette formation vous est présentée par <mark>Zenika</mark>
 <time>2009-11-13</time>
 <time datetime="2009-11-13">13 Novembre</time>
 ```
+
+Notes :
+
 
 
 
@@ -165,6 +195,9 @@ Cette formation vous est présentée par <mark>Zenika</mark>
   <figcaption>Le logo de Zenika</figcaption>
 </figure>
 
+Notes :
+
+
 
 
 ## Autres
@@ -182,6 +215,9 @@ Cette formation vous est présentée par <mark>Zenika</mark>
 ```js
 document.getElementById('picture1').dataset('fullpath'));
 ```
+
+Notes :
+
 
 
 
@@ -205,6 +241,9 @@ document.getElementById('picture1').dataset('fullpath'));
   <button type="submit">OK</button>
 </form>
 
+Notes :
+
+
 
 
 ## Formulaires - Nouveaux champs
@@ -215,6 +254,9 @@ document.getElementById('picture1').dataset('fullpath'));
   - `<input type="number"/>` <input type="number"/>
   - `<input type="search"/>` <input type="search"/>
   - `<input type="range"/>` <input type="range"/>
+
+Notes :
+
 
 
 
@@ -227,6 +269,9 @@ document.getElementById('picture1').dataset('fullpath'));
   - `url`
 - Leur utilisation offre une validation du contenu
 - Cela permet également de charger les claviers correspondants sur des systèmes mobiles
+
+Notes :
+
 
 
 
@@ -255,6 +300,9 @@ document.getElementById('picture1').dataset('fullpath'));
 </form>
 ```
 
+Notes :
+
+
 
 
 ## Formulaires - Validation
@@ -275,6 +323,9 @@ document.getElementById('picture1').dataset('fullpath'));
 
 - Fonctionne pour ces types : `number`, `range`, `date`, `datetime`, `datetime-local`, `month`, `time` et `week`
 
+Notes :
+
+
 
 
 ## Formulaires - Validation
@@ -291,6 +342,9 @@ document.getElementById('picture1').dataset('fullpath'));
 <input type="number" placeholder="Entrez votre âge" />
 ```
 
+Notes :
+
+
 
 
 ## Formulaires - Validation
@@ -305,6 +359,9 @@ document.getElementById('picture1').dataset('fullpath'));
 <input type="email" />
 <input type="password" autocomplete="off" />
 ```
+
+Notes :
+
 
 
 
@@ -321,7 +378,11 @@ document.getElementById('picture1').dataset('fullpath'));
 ```html
 <form novalidate>
 <input type="submit" formnovalidate/>
+</form>
 ```
+
+Notes :
+
 
 
 
@@ -343,6 +404,9 @@ function check(input) {
   }
 }
 ```
+
+Notes :
+
 
 
 
@@ -371,6 +435,9 @@ function check(input) {
 </form>
 ```
 
+Notes :
+
+
 
 
 ## Formulaires - Nouveaux éléments
@@ -386,6 +453,9 @@ function check(input) {
   <option value="Pérou">
 </datalist>
 ```
+
+Notes :
+
 
 
 
@@ -407,6 +477,9 @@ function check(input) {
 <input type="search" list="pays" placeholder="Exemple"/>
 
 - Attention, les listes peuvent servir à guider l'utilisateur,mais ne l'empêchent pas de saisir d'autres valeurs !
+
+Notes :
+
 
 
 
