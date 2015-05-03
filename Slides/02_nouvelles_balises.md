@@ -414,22 +414,17 @@ Notes :
 
 ```html
 <form autocomplete="on">
-  <input type="text" name="name" 
-    pattern="[a-zA-z]+" required/>
-  <input type="number" name="age" 
-    min="18" max="120" step="1" required/>
-  <input type="date" name="birthday" 
-    max="2010-01-01"/>
-  <input type="email" name="tel" 
-    placeholder="email@example.com"/>
-  <input type="tel" name="tel" 
-    placeholder="0600112233"/>
-  <input type="url" name="site" 
-    placeholder="http://site.com"/>
-  <input type="password" name="password" id="pass" 
-    autocomplete="off"/>
-  <input type="password" name="password2" id="pass2" 
-    autocomplete="off"/>
+  <input type="text" name="name" pattern="[a-zA-z]+" required/>
+  <input type="number" name="age" min="18" max="120"
+      step="1" required/>
+  <input type="date" name="birthday" max="2010-01-01"/>
+  <input type="email" name="tel" placeholder="email@domain.com"/>
+  <input type="tel" name="tel" placeholder="0600112233"/>
+  <input type="url" name="site" placeholder="http://site.com"/>
+  <input type="password" name="password" id="pass"
+      autocomplete="off"/>
+  <input type="password" name="password2" id="pass2"
+      autocomplete="off"/>
   <input type="submit" value="submit"/>
   <input type="submit" formnovalidate value="save"/>
 </form>
@@ -488,20 +483,23 @@ Notes :
 - `output` est une nouvelle balise qui sert à afficher un résultat
 - Elle est pratique pour calculer des valeurs conditionnées par le contenu du formulaire
 
-```html
-<form 
-  oninput="result.value = parseInt(a.value) + parseInt(b.value)">
+<form oninput="result.value = parseInt(a.value) + parseInt(b.value)">
 <input type="number" name="a" value="0"/>
 + <input type="number" name="b" value="0"/>
 = <output for="a b" name="result"/>
 </form>
+
+```html
+<form 
+  oninput="result.value = parseInt(a.value) + parseInt(b.value)">
+  
+<input type="number" name="a" value="0"/>
++ <input type="number" name="b" value="0"/>
+= <output for="a b" name="result"/>
+
+</form>
 ```
 
-<form oninput="result.value = parseInt(a.value) + parseInt(b.value)">
-<input type="number" name="a" value="0"/>
-+<input type="number" name="b" value="0"/>
-=<output for="a b" name="result"/>
-</form>
 
 
 

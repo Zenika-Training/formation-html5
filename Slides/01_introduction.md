@@ -50,7 +50,6 @@ Notes :
 
 ## "HTML5" : HTML5 + JavaScript + CSS3
 
-
 ![Logos du web](ressources/logos-web.png)
 
 Notes :
