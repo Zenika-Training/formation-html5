@@ -76,21 +76,18 @@ Notes :
 
 
 
-## Local store et Session store
-  
-Exemple
+## Local store et Session store (Exemple)
 
 ```html
     <h2>My web library</h2>
     <form onsubmit="return saveBook();">
-    <label for="bookName">Book :</label>
-    <input type="text" id="bookName"/>
-    <input type="submit" value="Add"/>
+        <label for="bookName">Book :</label>
+        <input type="text" id="bookName"/>
+        <input type="submit" value="Add"/>
     </form>
 
     <ul id="books"></ul>
 ```
-
 
 ![](ressources/images/07_gestion_des_données-1000020100000125000000BC9D734E62.png)
 
@@ -99,10 +96,8 @@ Notes :
 
 
 
-## Local store et Session store
+## Local store et Session store (Exemple)
   
-Exemple
-
 ```javascript
 var storage = window.localStorage; // ou window.sessionStorage
 
@@ -131,9 +126,7 @@ Notes :
 
 
 
-## Local store et Session store
-  
-Exemple
+## Local store et Session store (Exemple)
 
 ![](ressources/images/07_gestion_des_données-10000201000002F30000020540728254.png)
 
@@ -142,9 +135,7 @@ Notes :
 
 
 
-## Web SQL databases
-  
-Principes
+## Web SQL databases (Principes)
 
 - Véritable base de données embarquée
 	- Gestion des transactions
@@ -167,9 +158,7 @@ Notes :
 
 
 
-## Web SQL databases
-  
-Transactions
+## Web SQL databases (Transactions)
 
 - Gestion des transactions
 	- La fonction callback est exécutée dans la transaction
@@ -190,17 +179,13 @@ Notes :
 
 
 
-## Web SQL databases
+## Web SQL databases (Exemple)
   
-Exemple
-
 ```javascript
 var db = openDatabase('mydb', '1.0', 'Books', 1024 * 1024);
 
 if (db) {
-
     db.transaction(function (tx) {
-
         // Ecriture
         tx.executeSql("CREATE TABLE BOOK(ID unique, NAME text");
         tx.executeSql("INSERT INTO BOOK (ID,NAME) VALUES (1,'Dune')");
@@ -210,9 +195,7 @@ if (db) {
         function (tx, books) {
             window.alert(books);
         });
-
     });
-
 }
 ```
 
@@ -221,9 +204,7 @@ Notes :
 
 
 
-## Web SQL databases
-  
-Exemple
+## Web SQL databases (Exemple)
 
 ![](ressources/images/07_gestion_des_données-10000201000001F9000000CFA5E4A384.png)
 
@@ -232,10 +213,8 @@ Notes :
 
 
 
-## Web SQL databases
+## Web SQL databases (Conclusion)
   
-Conclusion
-
 - La spécification n'est plus maintenue par le W3C
 	- Pas assez d'implémentations différentes
 	- Toutes basées sur SQLite
@@ -250,9 +229,7 @@ Notes :
 
 
 
-## Web databases
-  
-IndexedDB
+## Web databases (IndexedDB)
 
 - Spécification en remplacement de Web SQL database, dépréciée en novembre 2010 par le W3C
 - Base de données de type « object store »
@@ -261,7 +238,6 @@ IndexedDB
 	- Création d'index pour récupérer les objets suivant des propriétés
 	- APIs asynchrone et synchrone
 		- L'API synchrone est cependant peu implémentée et sujette à abandon par le W3C
-
 - Support : chrome 11+, Firefox 4+, IE 10
 
 ```javascript
@@ -273,14 +249,9 @@ Notes :
 
 
 
-## Web databases
+## Web databases (IndexedDB - création)
   
-IndexedDB - création
-
 - Création/ouverture de la base
-
-- Création d'un objet
-
 ```javascript
 var request = indexedDB.open('AddressBook' , 1); //version 1
 request.onsuccess = function(evt) {
@@ -296,6 +267,7 @@ request.onerror = function(evt) {
 };
 ```
 
+- Création d'un objet
 ```javascript
 var contact = db.createObjectStore(
     'contact', 
@@ -308,9 +280,7 @@ Notes :
 
 
 
-## Web databases
-  
-IndexedDB – transaction et opérations
+## Web databases (IndexedDB – transaction et opérations)
 
 - Création d'index
 - Transactions : opérations
@@ -340,10 +310,8 @@ Notes :
 
 
 
-## Web databases
+## Web databases (IndexedDB)
   
-IndexedDB
-
 - Résultat : outils de développement chrome
 
 - Conclusion
@@ -387,9 +355,7 @@ Notes :
 
 
 
-## Application déconnectées
-  
-Le Manifeste
+## Application déconnectées (Le Manifeste)
 
 - Un Manifeste liste les ressources à mettre en cache
 	- Fichier texte brut
@@ -407,10 +373,8 @@ Notes :
 
 
 
-## Application déconnectées
+## Application déconnectées (Le Manifeste - structure)
   
-Le Manifeste - structure
-
 - En-tête CACHE MANIFEST
 - Section CACHE obligatoire  
 Liste des ressources à mettre en cache
@@ -424,10 +388,8 @@ Notes :
 
 
 
-## Application déconnectées
+## Application déconnectées (Le Manifeste - exemple)
   
-Le Manifeste - exemple
-
 ```
 CACHE MANIFEST
 
@@ -450,9 +412,7 @@ Notes :
 
 
 
-## Application déconnectées
-  
-Le Manifeste - astuces
+## Application déconnectées (Le Manifeste - astuces)
 
 - Chaque page HTML référençant un manifeste est automatiquement mise en cache
 	- Pas besoin de lister toutes les pages HTML !
@@ -469,9 +429,7 @@ Notes :
 
 
 
-## Application déconnectées
-  
-Le Manifeste – type MIME
+## Application déconnectées (Le Manifeste – type MIME)
 
 - Configuration du type MIME
 	- Apache httpd
@@ -482,10 +440,10 @@ AddType text/cache-manifest .appcache
 ```
 
 ```
-    <mime-mapping>
-    <extension>appcache</extension>
-    <mime-type>text/cache-manifest</mime-type>
-    </mime-mapping>
+<mime-mapping>
+<extension>appcache</extension>
+<mime-type>text/cache-manifest</mime-type>
+</mime-mapping>
 ```
 
 Notes :
@@ -493,26 +451,24 @@ Notes :
 
 
 
-## Application déconnectées
-  
-Le Manifeste – mise en cache
+## Application déconnectées (Le Manifeste – mise en cache)
 
 - Attention à ne pas mettre le manifeste lui-même en cache !
 	- Ajouter un commentaire qui change à chaque version
 	- Apache httpd
 
 ```
-    <IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType text/cache-manifest "access plus 0 seconds"
-    </IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/cache-manifest "access plus 0 seconds"
+</IfModule>
 ```
 
 ```
-    CACHE MANIFEST
-    # 2012-08-01 14:00
+CACHE MANIFEST
+# 2012-08-01 14:00
 
-    CACHE
+CACHE
 ...
 
 ```

@@ -24,7 +24,7 @@ Notes :
 
 ## Les points clés du javascript
 
-- En Javascript, presque tout est objet (Array, String, Function...)
+- En Javascript, presque tout est objet (`Array`, `String`, `Function`...)
 - Les points à comprendre pour ne pas tomber dans les pièges :
 	- Comment itérer sur des objets ou tableaux
 	- Le scope, ou portée des variables
@@ -46,14 +46,16 @@ Notes :
 ```javascript
 var chiffres = ['un','deux','trois','quatre'];
 var size = chiffres.length;
-for(var i=0; i < size; i++){
+for(var i = 0; i < size; i++){
     doSomething(chiffres[i]);
 }
 ```
 
 ```javascript
 for (var i in obj) {
-    console.log(i + " = ", obj[i]);
+    if (obj.hasOwnProperty(i)){
+        console.log(i + " = ", obj[i]);
+    }
 }
 ```
 
@@ -97,8 +99,7 @@ console.log(foo);
 // Affiche "bar"
 console.log(bar);
 
-// undefined car "answer" n'est 
-// visible que dans la fonction f()
+// undefined car "answer" n'est visible que dans la fonction f()
 console.log(answer); 
 ```
 
@@ -156,12 +157,13 @@ Notes :
 - Les fonctions définissent dans leur contexte 2 variables implicites
 	- `this` représente le contexte d'appel d'une fonction  
   
-Attention !  
+**Attention !**
+
 Contrairement au `this` des langages objets traditionnels, le `this` de Javascript dépend de la façon dont la fonction est appelée.
 
 ```javascript
 foo = "foo";
-    function f() {
+function f() {
     console.log(this.foo); // Erreur ? Pas toujours.
 }
 ```

@@ -167,9 +167,7 @@ Notes :
 - Pour une carte dynamique, il faut utiliser les API Google Maps
 	- Affichage sur une carte dans une div d'id « mapCanvas » 
 
-```html
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-```
+`<sc ript src="http://maps.google.com/maps/api/js?sensor=true"></sc ript>`
 
 ```javascript
 navigator.geolocation.getCurrentPosition(function(pos) {
@@ -236,10 +234,8 @@ Notes :
 
 
 
-## Drag'n'drop
+## Drag'n'drop (Événements)
   
-Événements
-
 - Événements relatifs à l'élément déplacé
 	- dragstart : début de l'action
 	- drag : action en cours
@@ -260,10 +256,8 @@ Notes :
 
 
 
-## Drag'n'drop
+## Drag'n'drop (Événements – exemple)
   
-Événements – exemple
-
 - Configuration de l'élément déplacé
 
 ```javascript
@@ -287,9 +281,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Événements – exemple
+## Drag'n'drop (Événements – exemple)
 
 - Configuration de la zone de réception
 	- Par défaut, les éléments ne supportent pas le "drop" ; il faut désactiver ce comportement sur l'événement ondragover
@@ -324,9 +316,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de données intra-navigateur
+## Drag'n'drop (Transfert de données intra-navigateur)
 
 - Il est possible d'associer des méta-données à l'élément déplacé
 - Propriété dataTransfer de l'événement de drag'n'drop
@@ -351,9 +341,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de fichiers vers le navigateur
+## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 - La propriété dataTransfer.files contient les descripteurs des fichiers posés dans la zone de réception
     - lastModifiedDate
@@ -378,9 +366,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de fichiers vers le navigateur
+## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 - Pour obtenir davantage d'informations sur les fichiers, il faut utiliser l'API FileReader
 	- readAsDataURL(file) : renvoie l'URL complète du fichier
@@ -403,9 +389,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de fichiers vers le navigateur
+## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 ```javascript
 zone.ondrop = function(e) {
@@ -433,9 +417,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de fichiers vers le navigateur
+## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 ![](ressources/images/06_applications_interactives-1000020100000192000000FE4505E91C.png)
 
@@ -446,9 +428,7 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de fichiers vers le navigateur
+## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 - Compatibilité
 
@@ -459,14 +439,11 @@ Notes :
 
 
 
-## Drag'n'drop
-  
-Transfert de fichiers vers le navigateur
+## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 - Compatibilité
 
 ![](ressources/images/06_applications_interactives-10000201000003AC000001666F7F965B.png)
-
 
 Notes :
 

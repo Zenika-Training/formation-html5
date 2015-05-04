@@ -188,14 +188,14 @@ Notes :
 
 ```html
 <body onload="draw()">
-<canvas id="canvas" width="400" height="400"></canvas>
-<script type="text/javascript">
-function draw(){
-var c=document.getElementById("canvas");
-if(c.getContext){
-var ctx= c.getContext("2d");
- (...)
- </script>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <sc ript type="text/javascript">
+        function draw(){
+        var c=document.getElementById("canvas");
+        if(c.getContext){
+        var ctx= c.getContext("2d");
+         (...)
+     </sc ript>
  </body>
 ```
 
@@ -375,9 +375,7 @@ Notes :
   
 Images
 
-```javascript
-drawImage(src, sX, sY, sLargeur, sHauteur, dX, dY, dLargeur, dHauteur);
-```
+`drawImage(src, sX, sY, sLargeur, sHauteur, dX, dY, dLargeur, dHauteur);`
 
 ![](ressources/images/08_multimédia-100000000000012C00000122B0DA9752.jpg)
 
