@@ -191,7 +191,7 @@ Notes :
 ```
 
 <figure>
-  <img src="ressources/logo-zenika.jpg"  width="30%"/>
+  <img src="ressources/logo-zenika.png"  width="30%"/>
   <figcaption>Le logo de Zenika</figcaption>
 </figure>
 
