@@ -124,16 +124,16 @@ Notes :
 - Accès aux API du navigateur : barre d'adresse, historique, stockage local, réseau, géolocalisation, caméra, microphone...
 
 ```html
-<sscript>
+<scrïpt>
 //code
-</sscript>
+</scrïpt>
 ```
 
 ```html
-<sscript src="script.js"></sscript>
+<scrïpt. src="script.js"></scrïpt.>
 ```
 
-```js
+```javascript
 var paragraph1 = document.getElementById("paragraph1");
 paragraph1.innerHTML("hello world");
 ```

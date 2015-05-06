@@ -69,11 +69,11 @@ Notes :
 - La portée ("scope") d'une variable détermine sa visibilité au sein du programme
 - Il existe deux scopes
 	- Scope global  
-- accessible dans tout le programme  
-- pas de mot-clé 
+- Accessible dans tout le programme  
+- Pas de mot-clé 
 	- Scope local  
-- accessible uniquement dans la fonction dans laquelle la variable est déclarée  
-- mot-clé `var`
+- Accessible uniquement dans la fonction dans laquelle la variable est déclarée  
+- Mot-clé `var`
 
 Notes :
 
@@ -115,7 +115,7 @@ Notes :
 	- `===` compare les valeurs (égalité stricte). A préférer !
 
 - Les variables peuvent prendre certaines valeurs spéciales
-	- undefined est l'état par défaut d'une variable non définie
+	- `undefined` est l'état par défaut d'une variable non définie
 	- `null` est l'état d'un objet défini mais qui n'a pas de valeur
 	- `NaN` signifie "Not a Number" et caractérise généralement le résultat d'une opération sans résultat (ex : `Math.sqrt(-4)`)
 
@@ -156,17 +156,16 @@ Notes :
 
 - Les fonctions définissent dans leur contexte 2 variables implicites
 	- `this` représente le contexte d'appel d'une fonction  
-  
-**Attention !**
-
-Contrairement au `this` des langages objets traditionnels, le `this` de Javascript dépend de la façon dont la fonction est appelée.
-
 ```javascript
 foo = "foo";
 function f() {
     console.log(this.foo); // Erreur ? Pas toujours.
 }
 ```
+  
+**Attention !**
+
+Contrairement au `this` des langages objets traditionnels, le `this` de Javascript dépend de la façon dont la fonction est appelée.
 
 Notes :
 
@@ -175,8 +174,8 @@ Notes :
 
 ## Fonctions et variables implicites
 
-- Le type de fonction détermine le contexte vu par this 
-	- Fonction top-level : `this` est l'objet window 
+- Le type de fonction détermine le contexte vu par `this` 
+	- Fonction top-level : `this` est l'objet `window`
 	- Méthode appelée sur un objet : `this` est l'objet cible
 
 ```javascript
@@ -225,6 +224,7 @@ Notes :
 ## Debug et outils de qualité
 
 - Webkit developer tools : disponible sur tous les navigateurs basés sur Webkit (Chrome, Safari)
+- Firefox developer tools : disponible sur Firefox par défaut
 - Firebug : plugin de Firefox avec de nombreuses fonctionnalités (visionnage du html, des scripts, des requêtes en fonction du temps, une console d'exécution de javascript...)
 - JSLint : outil d'analyse statique développé par D. Crockford. Valide le javascript soumis et teste de nombreuses mauvaises pratiques.
 - jsfiddle.net : application web pour tester des fragments de code. L'application permet d'incorporer la plupart des librairies connues.(jquery, extjs…) pour tester directement leurs fonctionnalités.
@@ -248,11 +248,11 @@ Notes :
 - Edition des styles CSS à la volée, sauvegarde possible dans le fichier cible (source map)
 - Accès à tous les override CSS, convertisseur hexa, rgb, hsl 
 - Métriques sur l'élément sélectionné
-- Edition du DOM, déplacement d'éléments en mode DragnDrop
-- Simulation de l'état (hover, focus, ...)
+- Edition du DOM, déplacement d'éléments en mode Drag'n'Drop
+- Simulation de l'état (`hover`, `focus`, ...)
 - Breakpoints sur subtree modification, attribute modification, node removal
 - Via le sous-onglet "computed" : accès aux propriétés aggrégées pour l'élément courant
-- Accès aux Event Listener enregistrés sur chaque noeud
+- Accès aux `EventListener` enregistrés sur chaque noeud
 
 Notes :
 
@@ -276,6 +276,14 @@ Notes :
     - Javascript
     - Stylesheets
     - Images
+    
+Notes :
+
+
+
+
+## Chrome DevTools – Elements
+
 - Différents types de stockage : 
     - WebSQL Database 
     - IndexedDB
@@ -307,6 +315,14 @@ Notes :
     - Scripts
     - Websockets
 - Détail de chacune des requêtes avec les entêtes, headers, réponse...
+
+Notes :
+
+
+
+
+## Chrome DevTools – Network
+
 - Nombreuses options accessibles via clic droit
     - Copy link
     - Copy as cURL
@@ -358,9 +374,9 @@ Notes :
 
 - Interprétation / exécution de code dans le scope courant (si script en pause, utilisation du contexte de l'endroit en pause)
 - Visionnage d'un objet du scope et de toutes ses propriétés
-- Sélection d'éléments avec $('#element') comme du jQuery (selecteur Bling). Possibilité d'accéder aux éléments précédemment sélectionnés via $0, $1, $2...
-- Monitorer les évènements sur un élément : monitorEvents($('#element'))
-- console.table(array) permet de faire afficher un array de manière plus lisible
+- Sélection d'éléments avec `$('#element')` comme du jQuery (selecteur `Bling`). Possibilité d'accéder aux éléments précédemment sélectionnés via `$0`, `$1`, `$2`...
+- Monitorer les évènements sur un élément : `monitorEvents($('#element'))`
+- `console.table(array)` permet de faire afficher un array de manière plus lisible
 
 Notes :
 
@@ -404,13 +420,13 @@ Notes :
 
 ## Chrome Urls
 
-- chrome://chrome-urls/
+- [chrome://chrome-urls/](chrome://chrome-urls/)
 - Extension : Google Chrome Service Pages
-    - chrome://appcache-internals
-    - chrome://flags/
-    - chrome://indexeddb-internals/
-    - chrome://inspect
-    - chrome://webrtc-internals
+    - [chrome://appcache-internals](chrome://appcache-internals)
+    - [chrome://flags/](chrome://flags/)
+    - [chrome://indexeddb-internals/](chrome://indexeddb-internals/)
+    - [chrome://inspect](chrome://inspect)
+    - [chrome://webrtc-internals](chrome://webrtc-internals)
 
 Notes :
 

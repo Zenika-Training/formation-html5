@@ -228,18 +228,18 @@ Notes :
   - De nouveaux attributs, qui permettent de spécifier le comportement des champs : `required`, `min`, `step`, `placeholder`...
   - De nouveaux éléments : `output`, `datalist`
 
-```html
-<input type="number"
-  required min="10 "step="5"
-  placeholder="Saisir un nombre >= 10"/>
-```
-
 <form>
   <input type="number" 
     required min="10" step="5" 
     placeholder="Saisir un nombre >= 10"/>
   <button type="submit">OK</button>
 </form>
+
+```html
+<input type="number"
+  required min="10 "step="5"
+  placeholder="Saisir un nombre >= 10"/>
+```
 
 Notes :
 
@@ -307,14 +307,14 @@ Notes :
 
 ## Formulaires - Validation
 
-- Minimum, maximum
+- Minimum, maximum <input type="number" min="3" max="9"/>&nbsp;<input type="date" max="2012-06-21"/>
 
 ```html
 <input type="number" min="3" max="9"/>
 <input type="date" max="2012-06-21"/>
 ```
 
-- Incrément
+- Incrément <input type="number" step="3"/>&nbsp;<input type="range" step="5"/>
 
 ```html
 <input type="number" step="3"/>
@@ -341,6 +341,7 @@ Notes :
 ```html
 <input type="number" placeholder="Entrez votre âge" />
 ```
+<input type="number" placeholder="Entrez votre âge" />
 
 Notes :
 
@@ -355,9 +356,10 @@ Notes :
   - Avec la balise `input` pour spécifier le comportement d'un champ particulier
 
 ```html
-<form autocomplete="on"/>
-<input type="email" />
-<input type="password" autocomplete="off" />
+<form autocomplete="on">
+    <input type="email" />
+    <input type="password" autocomplete="off" />
+</form>
 ```
 
 Notes :
@@ -377,7 +379,7 @@ Notes :
 
 ```html
 <form novalidate>
-<input type="submit" formnovalidate/>
+    <input type="submit" formnovalidate/>
 </form>
 ```
 
@@ -437,31 +439,6 @@ Notes :
 
 ## Formulaires - Nouveaux éléments
 
-- Il est possible de définir des listes d'options avec `datalist`
-
-```html
-<datalist id="pays">
-  <option value="France">
-  <option value="Chine">
-  <option value="Italie">
-  <option value="Gabon">
-  <option value="Pérou">
-</datalist>
-```
-
-Notes :
-
-
-
-
-## Formulaires - Nouveaux éléments
-
-- On peut ensuite l'utiliser avec l'attribut `list`
-
-```html
-<input type="search" list="pays"/>
-```
-
 <datalist id="pays">
   <option value="France">
   <option value="Chine">
@@ -470,6 +447,21 @@ Notes :
   <option value="Pérou">
 </datalist>
 <input type="search" list="pays" placeholder="Exemple"/>
+
+- Il est possible de définir des listes d'options avec `datalist`
+```html
+<datalist id="pays">
+  <option value="France">
+  <option value="Chine">
+  <option value="Italie">
+  <option value="Gabon">
+  <option value="Pérou">
+</datalist>
+```
+- On peut ensuite l'utiliser avec l'attribut `list`
+```html
+<input type="search" list="pays"/>
+```
 
 - Attention, les listes peuvent servir à guider l'utilisateur,mais ne l'empêchent pas de saisir d'autres valeurs !
 

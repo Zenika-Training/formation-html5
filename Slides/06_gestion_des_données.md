@@ -24,7 +24,7 @@ Notes :
 
 ## Plan
 
-- Session Store et Local Store
+- Session store et Local store
 - Bases de données web
 - Applications déconnectées avec Application Cache
 
@@ -33,42 +33,44 @@ Notes :
 
 
 
-## Local store et Session store
+## Session store et Local store
+
+<br />
+<!-- .element: style="display: block; float: right; width: 20%" -->
+<figure style="display: block; float: left; width: 20%; margin: 0 10px;">
+    <img src="ressources/images/07_gestion_des_données-100002010000008000000080B9A1F0AA.png" alt="Store" />
+</figure>
 
 - HTML 5 offre deux façons de stocker du contenu côté client
-	- Le "session store", temporaire, qui est propre à chaque session de navigation (fenêtre ou onglet du navigateur)
-	- Le "local store", permanent, qui est propre à un domaine
-
-```javascript
-var storage = window.sessionStorage;
-```
-
-```javascript
-var storage = window.localStorage;
-```
-
-![](ressources/images/07_gestion_des_données-100002010000008000000080B9A1F0AA.png)
+  - Le "session store", temporaire, qui est propre à chaque session de navigation (fenêtre ou onglet du navigateur)
+  ```javascript
+  var storage = window.sessionStorage;
+  ```
+  - Le "local store", permanent, qui est propre à un domaine
+  ```javascript
+  var storage = window.localStorage;
+  ```
 
 Notes :
 
 
 
 
-## Local store et Session store
+## Session store et Local store
 
 - Les deux Stores proposent la même API
-	- setItem(key, value)
-	- getItem(key)
-	- removeItem(key)
-	- clear()
-	- key(index) // Récupère la clé n°index
-	- length
+  - `setItem(key, value)`
+  - `getItem(key)`
+  - `removeItem(key)`
+  - `clear()`
+  - `key(index)` Récupère la clé n°index
+  - `length`
 
 - Les Stores étant des tableaux, on peut également utiliser la notation avec des crochets
 - Compatible Chrome 4+, Safari 4+, Opera 10.5+, Firefox 3.5+, IE 8+
 
 ```javascript
-    window.sessionStorage[<key>] = <value>;
+    window.sessionStorage[key] = value;
 ```
 
 Notes :
@@ -76,7 +78,7 @@ Notes :
 
 
 
-## Local store et Session store (Exemple)
+## Session store et Local store (Exemple)
 
 ```html
     <h2>My web library</h2>
@@ -96,7 +98,7 @@ Notes :
 
 
 
-## Local store et Session store (Exemple)
+## Session store et Local store (Exemple)
   
 ```javascript
 var storage = window.localStorage; // ou window.sessionStorage
@@ -126,7 +128,7 @@ Notes :
 
 
 
-## Local store et Session store (Exemple)
+## Session store et Local store (Exemple)
 
 ![](ressources/images/07_gestion_des_données-10000201000002F30000020540728254.png)
 
@@ -138,14 +140,14 @@ Notes :
 ## Web SQL databases (Principes)
 
 - Véritable base de données embarquée
-	- Gestion des transactions
-	- Gestion des mises à jour de schémas 
+  - Gestion des transactions
+  - Gestion des mises à jour de schémas 
 
 - Pour créer ou ouvrir une base de données, il faut préciser ses
-	- ID
-	- Version
-	- Nom
-	- Taille estimée (en octets)
+  - ID
+  - Version
+  - Nom
+  - Taille estimée (en octets)
 
 ```javascript
 var db = openDatabase('mydb', '1.0', 'Books', 1024 * 1024);
@@ -161,18 +163,16 @@ Notes :
 ## Web SQL databases (Transactions)
 
 - Gestion des transactions
-	- La fonction callback est exécutée dans la transaction
-	- Le paramètre tx fournit la méthode executeSql, qui permet d'effectuer les opérations SQL de lecture et écriture
-
-```javascript
-tx.executeSql( query, [params], [callback] );
-```
-
-```javascript
-db.transaction(function (tx) {
-...
-});
-```
+  - La fonction callback est exécutée dans la transaction
+  ```javascript
+  db.transaction(function (tx) {
+  ...
+  });
+  ```
+  - Le paramètre tx fournit la méthode executeSql, qui permet d'effectuer les opérations SQL de lecture et écriture
+  ```javascript
+  tx.executeSql( query, [params], [callback] );
+  ```
 
 Notes :
 
@@ -283,21 +283,19 @@ Notes :
 ## Web databases (IndexedDB – transaction et opérations)
 
 - Création d'index
-- Transactions : opérations
-	- Ajout de données
-	- Récupération d'objet avec une clé
-
 ```javascript
 contact.createIndex("name", "name", { unique: false });
 contact.createIndex("email", "email", { unique: true });
 ```
 
+- Transactions : opérations
+  - Ajout de données
 ```javascript
 var tx = db.transaction(["contact", "readwrite"]);
 var store = tx.objectStore('contact');
 var contact1 = store.add({name: 'Joe', email: 'joe@mail.com'});
 ```
-
+  - Récupération d'objet avec une clé
 ```javascript
 var object = store.get(1);
     object.onsuccess = function(evt) { 
@@ -315,9 +313,9 @@ Notes :
 - Résultat : outils de développement chrome
 
 - Conclusion
-	- Nouvelle spécification
-		- Peu implémentée encore
-		- En cours de rédaction → documentation à suivre
+  - Nouvelle spécification
+    - Peu implémentée encore
+    - En cours de rédaction → documentation à suivre
 
 ![](ressources/images/07_gestion_des_données-10000000000002B1000001002FCC5DFA.png)
 
@@ -328,13 +326,21 @@ Notes :
 
 ## Application déconnectées
 
+<br />
+<!-- .element: style="display: block; float: right; width: 20%" -->
+<figure style="display: block; float: left; width: 20%; margin: 0 10px;">
+    <img src="ressources/images/07_gestion_des_données-1000020100000080000000805AB49031.png" alt="off line" />
+</figure>
+
 - HTML 5 propose un mode "hors ligne"
-	- Autorise une utilisation nomade et/ou déconnectée
-	- Stocke les ressources en cache (HTML, scripts, images...)
+  - Autorise une utilisation nomade et/ou déconnectée
+  - Stocke les ressources en cache (HTML, scripts, images...)
 
 - Détection de l'état de la connexion à Internet
 
 - Compatibilité : Chrome 19, Safari 5.1, Firefox 3.6, Opera 12
+
+<!-- .element: style="clear: right;" -->
 
 ```javascript
 if (navigator.onLine) { … }
@@ -348,11 +354,9 @@ window.addEventListener('offline', function(e) {
 }, false);
 ```
 
-![](ressources/images/07_gestion_des_données-1000020100000080000000805AB49031.png)
-
 Notes :
 
-
+![](ressources/images/07_gestion_des_données-1000020100000080000000805AB49031.png)
 
 
 ## Application déconnectées (Le Manifeste)
@@ -375,12 +379,12 @@ Notes :
 
 ## Application déconnectées (Le Manifeste - structure)
   
-- En-tête CACHE MANIFEST
-- Section CACHE obligatoire  
+- En-tête `CACHE MANIFEST`
+- Section `CACHE` obligatoire  
 Liste des ressources à mettre en cache
-- Section FALLBACK optionnelle  
+- Section `FALLBACK` optionnelle  
 Liste des ressources alternatives, à utiliser si les ressources réseau ne sont pas disponibles
-- Section NETWORK optionnelle  
+- Section `NETWORK` optionnelle  
 Liste des ressources devant être systématiquement accédées en ligne
 
 Notes :
@@ -415,7 +419,7 @@ Notes :
 ## Application déconnectées (Le Manifeste - astuces)
 
 - Chaque page HTML référençant un manifeste est automatiquement mise en cache
-	- Pas besoin de lister toutes les pages HTML !
+  - Pas besoin de lister toutes les pages HTML !
 
 - Pour empêcher l'utilisateur d'utiliser l'application, ou une partie de l'application, hors-ligne, il suffit de rediriger toutes ses pages vers une même ressource alternative
 
@@ -432,14 +436,12 @@ Notes :
 ## Application déconnectées (Le Manifeste – type MIME)
 
 - Configuration du type MIME
-	- Apache httpd
-	- Application web Java (web.xml)
-
+  - Apache httpd
 ```
 AddType text/cache-manifest .appcache
 ```
-
-```
+  - Application web Java (`web.xml`)
+```xml
 <mime-mapping>
 <extension>appcache</extension>
 <mime-type>text/cache-manifest</mime-type>
@@ -454,24 +456,24 @@ Notes :
 ## Application déconnectées (Le Manifeste – mise en cache)
 
 - Attention à ne pas mettre le manifeste lui-même en cache !
-	- Ajouter un commentaire qui change à chaque version
-	- Apache httpd
+  - Ajouter un commentaire qui change à chaque version
+  
+  ```txt
+  CACHE MANIFEST
+  # 2012-08-01 14:00
 
-```
-<IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType text/cache-manifest "access plus 0 seconds"
-</IfModule>
-```
+  CACHE
+  ...
 
-```
-CACHE MANIFEST
-# 2012-08-01 14:00
-
-CACHE
-...
-
-```
+  ```
+  - Apache httpd
+  
+  ```
+  <IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/cache-manifest "access plus 0 seconds"
+  </IfModule>
+  ```
 
 Notes :
 

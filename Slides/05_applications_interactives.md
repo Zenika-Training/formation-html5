@@ -48,13 +48,21 @@ Notes :
 
 ## Géolocalisation
 
+<br />
+<!-- .element: style="display: block; float: right; width: 20%" -->
+<figure style="display: block; float: left; width: 20%; margin: 0 10px;">
+    <img src="ressources/images/06_applications_interactives-1000020100000080000000809F5B811C.png" alt="Geo" />
+</figure>
+
 - La localisation est déterminée grâce 
-	- au GPS des appareils mobiles
-	- à une triangulation GSM/3G
-	- l'adresse IP du point de connexion
-	- triangulation wifi
-- Elle est accessible via l'objet navigator.geolocation
-	- Pas toujours disponible !
+  - au GPS des appareils mobiles
+  - à une triangulation GSM/3G
+  - l'adresse IP du point de connexion
+  - triangulation wifi
+- Elle est accessible via l'objet `navigator.geolocation`
+  - Pas toujours disponible !
+
+<!-- .element: style="clear: right;" -->
 
 ```javascript
 var geoloc = navigator.geolocation;
@@ -62,8 +70,6 @@ if (geoloc) {
 …
 }
 ```
-
-![](ressources/images/06_applications_interactives-1000020100000080000000809F5B811C.png)
 
 Notes :
 
@@ -73,18 +79,15 @@ Notes :
 ## Géolocalisation
 
 - Deux méthodes pour récupérer la position
-	- `getCurrentPosition() `  
-Détermine la position courante de l'utilisateur
-	- `watchPosition()`  
-Suit le déplacement de l'utilisateur en temps réel
-
+  - `getCurrentPosition()` Détermine la position courante de l'utilisateur
+  - `watchPosition()` Suit le déplacement de l'utilisateur en temps réel
 - Les deux méthodes acceptent les mêmes paramètres
-	- une fonction callback en cas de succès
-	- une fonction callback en cas d'échec
-	- des options, sous forme d'une map
-		- timeout (en ms)
-		- maximumAge (en ms)
-		- enableHighAccuracy (true|false)
+  - une fonction callback en cas de succès
+  - une fonction callback en cas d'échec
+  - des options, sous forme d'une map
+    - `timeout` (en ms)
+    - `maximumAge` (en ms)
+    - `nableHighAccuracy` (true|false)
 
 Notes :
 
@@ -94,14 +97,14 @@ Notes :
 ## Géolocalisation
 
 - En cas de succès, les fonctions renvoient la même structure Position contenant les coordonnées (attribut coords) et un timestamp :
-	- coords.latitude
-	- coords.longitude
-	- coords.accuracy
-	- coords.altitude
-	- coords.altitudeAccuracy
-	- coords.heading (direction par rapport au nord)
-	- coords.speed (en mètres / seconde)
-	- timestamp
+  - `coords.latitude`
+  - `coords.longitude`
+  - `coords.accuracy`
+  - `coords.altitude`
+  - `coords.altitudeAccuracy`
+  - `coords.heading` (direction par rapport au nord)
+  - `coords.speed` (en mètres / seconde)
+  - `timestamp`
 
 Notes :
 
@@ -138,8 +141,8 @@ Notes :
 ## Géolocalisation
 
 - Affichage de la position sur une carte statique Google Maps
-	- Carte statique, sans contrôles
-	- Facile à intégrer
+  - Carte statique, sans contrôles
+  - Facile à intégrer
 
 ```
 function onSuccess(pos) {
@@ -165,7 +168,7 @@ Notes :
 ## Géolocalisation
 
 - Pour une carte dynamique, il faut utiliser les API Google Maps
-	- Affichage sur une carte dans une div d'id « mapCanvas » 
+	- Affichage sur une carte dans une div d'id `mapCanvas` 
 
 `<sc ript src="http://maps.google.com/maps/api/js?sensor=true"></sc ript>`
 
@@ -193,9 +196,7 @@ Notes :
 
 ## Géolocalisation
 
-- Compatibilité
-
-![](ressources/images/06_applications_interactives-10000201000003AA0000017544621C3E.png)
+<iframe src="http://caniuse.com/#feat=geolocation" width="100%" height="75%"></iframe>
 
 Notes :
 
@@ -237,15 +238,15 @@ Notes :
 ## Drag'n'drop (Événements)
   
 - Événements relatifs à l'élément déplacé
-	- dragstart : début de l'action
-	- drag : action en cours
-	- dragend : fin de l'action
+	- `dragstart` : début de l'action
+	- `drag` : action en cours
+	- `dragend` : fin de l'action
 
 - Événements relatifs à l'élément récepteur
-	- dragenter : début de survol
-	- dragover : survol en cours
-	- dragleave : fin de survol
-	- drop : élément lâché 
+	- `dragenter` : début de survol
+	- `dragover` : survol en cours
+	- `dragleave` : fin de survol
+	- `drop` : élément lâché 
 
 ```javascript
     <element>.on<event> = function() { … }
@@ -307,9 +308,7 @@ Return false; permet de ne pas lancer l'événement aux parents de l'élément.
 
 ## Drag'n'drop
 
-- Compatibilité
-
-![](ressources/images/06_applications_interactives-10000201000003AB000001731E9F2D10.png)
+<iframe src="http://caniuse.com/#feat=dragndrop" width="100%" height="75%"></iframe>
 
 Notes :
 
@@ -320,9 +319,9 @@ Notes :
 
 - Il est possible d'associer des méta-données à l'élément déplacé
 - Propriété dataTransfer de l'événement de drag'n'drop
-	- setData(mime-type, value)
-	- getData(mime-type)
-	- clearData(mime-type)
+	- `setData(mime-type, value)`
+	- `getData(mime-type)`
+	- `clearData(mime-type)`
 	- types : mime-types des données transmises (tableau)
 
 ```javascript
@@ -343,11 +342,11 @@ Notes :
 
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
-- La propriété dataTransfer.files contient les descripteurs des fichiers posés dans la zone de réception
-    - lastModifiedDate
-    - name : nom court, sans le chemin
-    - size : taille en octets
-    - type : type mime
+- La propriété `dataTransfer.files` contient les descripteurs des fichiers posés dans la zone de réception
+    - `lastModifiedDate`
+    - `name` : nom court, sans le chemin
+    - `size` : taille en octets
+    - `type` : type mime
 
 ```javascript
 zone.ondrop = function(e) {
@@ -368,14 +367,14 @@ Notes :
 
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
-- Pour obtenir davantage d'informations sur les fichiers, il faut utiliser l'API FileReader
-	- readAsDataURL(file) : renvoie l'URL complète du fichier
-	- readAsBinaryString(file) : lit le fichier en binaire
-	- readAsText(file, [charset]) : lit le fichier en UTF8
+- Pour obtenir d'avantage d'informations sur les fichiers, il faut utiliser l'API FileReader
+	- `readAsDataURL(file)` : renvoie l'URL complète du fichier
+	- `readAsBinaryString(file)` : lit le fichier en binaire
+	- `readAsText(file, [charset])` : lit le fichier en UTF8
 
 - La progression est monitorée par des méthodes callback
-	- onabort(), onerror(), onload(), onprogress()
-	- Paramètre de type ProgressEvent contenant le résultat
+	- `onabort()`, `onerror()`, `onload()`, `onprogress()`
+	- Paramètre de type `ProgressEvent` contenant le résultat
 
 ```javascript
 reader.onload = function(e) {
@@ -430,9 +429,7 @@ Notes :
 
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
-- Compatibilité
-
-![](ressources/images/06_applications_interactives-10000201000003A9000001759316FB20.png)
+<iframe src="http://caniuse.com/#feat=fileapi" width="100%" height="75%"></iframe>
 
 Notes :
 
@@ -441,9 +438,7 @@ Notes :
 
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
-- Compatibilité
-
-![](ressources/images/06_applications_interactives-10000201000003AC000001666F7F965B.png)
+<iframe src="http://caniuse.com/#feat=filereader" width="100%" height="75%"></iframe>
 
 Notes :
 

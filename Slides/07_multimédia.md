@@ -37,19 +37,16 @@ Notes :
 
 - HTML5 possède un tag natif pour embarquer des pistes audio
 	- Selon le navigateur, le code nécessaire peut varierou
-
+  ```html
+      <audio controls="controls">
+          <source src="music.mp3" type="audio/mp3" />
+      </audio>
+  ```
+  ou
+  ```html
+      <audio controls="controls" src="song.mp3"/>
+  ```
 - Rendu (spécifique à chaque navigateur)
-
-```html
-    <audio controls="controls">
-        <source src="music.mp3" type="audio/mp3" />
-    </audio>
-```
-
-```html
-    <audio controls="controls" src="song.mp3"/>
-```
-
 ![](ressources/images/08_multimédia-100000000000013D00000031B191CCA0.png)
 
 Notes :
@@ -102,14 +99,13 @@ Notes :
 ## Intégration d'une vidéo
 
 - HTML5 possède un tag natif pour la lecture de vidéos
-- Une application de démonstration est disponible sur le site du W3C
-
-![](ressources/images/08_multimédia-10000000000001A9000000F14E83EB17.png)
-
 ```html
 <video controls src="myVideo.mp4"/>
 // controls donne accès à la barre de contrôle
 ```
+- Une application de démonstration est disponible sur le site du W3C
+
+![](ressources/images/08_multimédia-10000000000001A9000000F14E83EB17.png)
 
 Notes :
 
@@ -164,17 +160,16 @@ Notes :
 ## Générer des images avec Canvas
 
 - L'élément canvas est utilisé pour obtenir une zone de dessin que l'on contrôle avec une API spécifique
+```html
+<canvas width="400" height="400"></canvas>
+```
 - Attention, définir la taille du canvas en CSS grossit la zone de dessin au lieu de l'agrandir
 - Le canvas utilise un système de coordonnées pour pouvoir se repérer
-	- L'origine correspond au point X=0, Y=0 (En haut à gauche)
+	- L'origine correspond au point `X=0`, `Y=0` (En haut à gauche)
 	- La valeur maximale de X est sa largeur
 	- La valeur maximale de Y est sa hauteur
 
 - Par défaut, la largeur est de 300px et sa hauteur de 150px
-
-```html
-<canvas width="400" height="400"></canvas>
-```
 
 Notes :
 
@@ -184,8 +179,6 @@ Notes :
 ## Générer des images avec Canvas
 
 - Pour manipuler l'élément, il faut dans un premier temps obtenir sa référence
-- Le contexte obtenu permet d'accéder à l'API de dessin
-
 ```html
 <body onload="draw()">
     <canvas id="canvas" width="400" height="400"></canvas>
@@ -198,26 +191,22 @@ Notes :
      </sc ript>
  </body>
 ```
+- Le contexte obtenu permet d'accéder à l'API de dessin
 
 Notes :
 
 
 
 
-## Générer des images avec Canvas
-  
-Formes géométriques
+## Générer des images avec Canvas (Formes géométriques)
 
 - Lignes en définissant un point d'origine et un point d'arrivée
-
-- Rectangles en définissant un point d'origine et une taille
-
 ```javascript
 ctx.moveTo(0,0); //Aller au point (0,0)
 ctx.lineTo(200,200); //Faire une ligne jusqu'au point (200,200)
 ctx.stroke(); //Tracer
 ```
-
+- Rectangles en définissant un point d'origine et une taille
 ```javascript
 ctx.fillRect(0,0,50,50); // Dessine un rectangle plein
 ctx.strokeRect(60,0,50,30); // Dessine un rectangle vide
@@ -231,20 +220,16 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Formes géométriques
+## Générer des images avec Canvas (Formes géométriques)
 
 - Cercles ou arc de cercles
-- Les angles sont des valeurs en radians. Pour passer de degrés à radians, on utilise la formule suivante
-
 ```javascript
 ctx.arc(x,y,// centre du cercle
 rayon,// rayon
 angleDepart, angleFin,// angle
 sens) ;// sens inverse ou non
 ```
-
+- Les angles sont des valeurs en radians. Pour passer de degrés à radians, on utilise la formule suivante
 ```javascript
 var radians = (Math.PI/180)*degres
 ```
@@ -254,9 +239,7 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Formes géométriques
+## Générer des images avec Canvas (Formes géométriques)
 
 ```javascript
 ctx.arc(50,50,50,0,Math.PI*2,false); 
@@ -276,29 +259,23 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Formes géométriques
+## Générer des images avec Canvas (Formes géométriques)
 
 - Pour des formes plus complexes, il existe les courbes de bézier et les courbes quadratiques qui sont un peu plus complexes d'utilisation
+![](ressources/images/08_multimédia-10000000000000BE000000BE150053F6.png)
 - Des arrondis se forment en fonction de points de contrôle, un seul pour les courbes quadratiques et deux pour les courbes de bézier
-
 ```javascript
 quadraticCurveTo(ctlX, ctlY, x, y);
 bezierCurveTo(ctlX1, ctlY1, ctlX2, ctlY2, x, y)
 ```
-
-![](ressources/images/08_multimédia-10000000000000BE000000BE150053F6.png)
 
 Notes :
 
 
 
 
-## Générer des images avec Canvas
+## Générer des images avec Canvas (Formes géométriques)
   
-Formes géométriques
-
 ```javascript
 ctx.moveTo(75,25);
 ctx.quadraticCurveTo(25,25,25,62.5);
@@ -317,20 +294,15 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Texte
+## Générer des images avec Canvas (Texte)
 
 - Il est possible d'ajouter du texte, rempli ou non
-- La police et la taille utilisée se définissent avec la propriété font
-
 ```javascript
 fillText(Texte, x, y); // texte plein
 strokeText(Texte, x, y); // texte vide
 ```
-
 ![](ressources/images/08_multimédia-10000000000000C300000058C5772731.png)
-
+- La police et la taille utilisée se définissent avec la propriété `font`
 ```javascript
 ctx.font = "30px Arial";
 ctx.fillText("Mon texte",0,0); 
@@ -341,27 +313,22 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Images
+## Générer des images avec Canvas (Images)
 
 - Pour charger des images, il existe plusieurs solutions
-	- En chargeant les images en HTML
-	- Ou entièrement en Javascript
-- La méthode drawImage() permet aussi de redimensionner ou de couper une partie de l'image
-
-```
-<img src="images/zenika.jpg" id="img" style="display:none;" />
-(...)
-ctx.drawImage(document.getElementById("img"),x,y);
-```
-
-```javascript
-var img=new Image();
-img.src='images/zenika.jpg';
-ctx.drawImage(img,30,30);
-```
-
+  - En chargeant les images en HTML
+  ```
+  <img src="images/zenika.jpg" id="img" style="display:none;" />
+  (...)
+  ctx.drawImage(document.getElementById("img"),x,y);
+  ```
+  - Ou entièrement en Javascript
+  ```javascript
+  var img=new Image();
+  img.src='images/zenika.jpg';
+  ctx.drawImage(img,30,30);
+  ```
+- La méthode `drawImage()` permet aussi de redimensionner ou de couper une partie de l'image
 ```javascript
 drawImage(src, x, y, largeur, hauteur)
 ```
@@ -371,9 +338,7 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Images
+## Générer des images avec Canvas (Images)
 
 `drawImage(src, sX, sY, sLargeur, sHauteur, dX, dY, dLargeur, dHauteur);`
 
@@ -384,56 +349,52 @@ Notes :
 
 
 
-## Générer des images avec Canvas
-  
-Style
+## Générer des images avec Canvas (Style)
+
+<br />
+<!-- .element: style="display: block; float: right; width: 20%" -->
+
+<figure style="display: block; float: left; width: 20%; margin: 0 10px;">
+    <img src="ressources/images/08_multimédia-100000000000008C0000016CB27E5F72.png" alt="Grunt" />
+</figure>
 
 - Plusieurs propriétés permettent de personnaliser le style du canvas
-- Les méthodes save() et restore() sont particulièrement utiles, elles permettent de sauver puis de restaurer un style courant
-
-```javascript
-strokeStyle="#FF0098" //Couleur des contours
-fillStyle="black"//Couleur de remplissage
-GlobalAlpha="0,6"//Transparence
-LineWidth=10//Epaisseur de ligne
-```
-
-```javascript
-ctx.strokestyle="blue"; ctx.fillstyle="black";
-//Rectangle
-ctx.save();
-ctx.strokestyle="black" ; ctx.fillstyle="blue";
-//Rectangle
-ctx.restore();
-//Rectangle
-```
-
-![](ressources/images/08_multimédia-100000000000008C0000016CB27E5F72.png)
+  ```javascript
+  strokeStyle="#FF0098" //Couleur des contours
+  fillStyle="black"//Couleur de remplissage
+  GlobalAlpha="0,6"//Transparence
+  LineWidth=10//Epaisseur de ligne
+  ```
+- Les méthodes `save()` et `restore()` sont particulièrement utiles, elles permettent de sauver puis de restaurer un style courant
+  ```javascript
+  ctx.strokestyle="blue"; ctx.fillstyle="black";
+  //Rectangle
+  ctx.save();
+  ctx.strokestyle="black" ; ctx.fillstyle="blue";
+  //Rectangle
+  ctx.restore();
+  //Rectangle
+  ```
 
 Notes :
 
 
 
 
-## Générer des images avec Canvas
-  
-Animation
+## Générer des images avec Canvas (Animation)
 
 - Animer le canvas, c'est possible !
-- Le principe est de redessiner tout ou une partie du canvas à intervalles réguliers
-- Pour arrêter l'animation, clearInterval() est utilisé
-- Animer le canvas en fonction d'événements souris ou clavier du javascript permet de faire des jeux
-
+- Le principe est de redessiner tout ou une partie du canvas à intervalles réguliers (60 fps)
 ```javascript
-setInterval(update,500); // Appelle la méthode update toutes les 
-// 500 Millisecondes
+window.requestAnimationFrame(callback);
 ```
-
+- Pour arrêter l'animation, `cancelAnimationFrame()` est utilisé
 ```javascript
-var anim = setInterval(update, 500);
+var animId = window.requestAnimationFrame(callback);
 (...) 
-clearInterval(anim) ;
+ window.cancelAnimationFrame(animId);
 ```
+- Animer le canvas en fonction d'événements souris ou clavier du javascript permet de faire des jeux
 
 Notes :
 

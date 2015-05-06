@@ -26,6 +26,15 @@
 - [Multimédia](#/7)
 - [Conclusion](#/8)
 
+Notes :
 
+
+
+
+## Logistique
+
+* Horaires
+* Déjeuner & pauses
+* Autres questions ?
 
 <!-- .slide: class="page-questions" -->
