@@ -1,11 +1,3 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Training
- * Date: 9/3/12
- * Time: 4:05 PM
- * To change this template use File | Settings | File Templates.
- */
-
 /********fonctions du local storage*******/
 
 function save(evtId, value){

@@ -95,9 +95,9 @@ var conference =  [{
     description: '<p>Continuous Integration (CI) has been widely adopted over the past several years, and many development teams now embrace regular automated builds and tests into their development model. And Jenkins, a very popular open-source CI server, has helped people achieve this. At the same time, beyond those that we consider "basics", we are discovering that there\'s a lot of emerging trends in our industry that mesh very well with CI, and sophisticated users are starting to take advantage of those. Therefore, in this talk, true to the name of the conference, I\'ll discuss what\'s next in CI.<p/><p>One of such trends is the adoption of virtualization and cloud platforms, which brings us substantial automation on things that we couldn\'t automate before, and this works very well with CI in multiple levels. The saturation of single system performance and shift to horizontal scaling also creates a demand for a system like Jenkins, which lets you utilize a larger number of computers effortlessly. Then there\'s the rise of distributed version control system, which allows CI servers to act in ways that further offload developers, not to mention the rise of quality analysis software which helps your software development from another angle.</p><p>Those emerging frontiers of CI would hopefully convince you why you should invest in automation in software development!</p>',
     speaker: 'kawaguchi'
 }
-]
+];
 
-var liste = new Object();
+var liste = {};
 liste["web"]=0;
 liste["architecture"]=0;
 liste["langage"]=0;
@@ -113,7 +113,7 @@ function loadConf(jsonObj) {
         var titre = conf.title;
         var content = conf.title+", " + conf.speaker + ", "+ conf.day + " at "+ conf.time;
         var categorie = conf.category;
-		//TODO: afficher les évènements sauvegardés dans la colonne "my_events" et ceux qui restent dans "list_events" 
+		//TODO: afficher les Ã©vÃ¨nements sauvegardÃ©s dans la colonne "my_events" et ceux qui restent dans "list_events" 
 		displayEvt(id, content, categorie, "list_events");
     }
 }
@@ -129,7 +129,7 @@ function loadAgenda(jsonObj) {
         var titre = conf.title;
         var categorie = conf.category;
         var content = "<header>"+"<h2>"+conf.title+"</h2>" + "<p>"+"par "+conf.speaker+", "+conf.day+ " at "+ conf.time+"</p>" + "</header>"+ "<p>"+conf.description+"</p>";        
-		//TODO: afficher uniquement les évènements choisis dans agenda-edit (sauvegardés dans le local storage)
+		//TODO: afficher uniquement les Ã©vÃ¨nements choisis dans agenda-edit (sauvegardÃ©s dans le local storage)
 		displayEvt(id, content, "my_agenda");
 
     }

@@ -1,6 +1,6 @@
 /*******fonctions pour drag n drop********/
 
-//TODO: gérer la sauvegarde des évènements au drop
+//TODO: gÃ©rer la sauvegarde des Ã©vÃ¨nements au drop
 function drag(target, evt) {
     evt.dataTransfer.setData("Text", target.id);
 }
