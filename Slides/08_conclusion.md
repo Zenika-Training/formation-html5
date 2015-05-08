@@ -42,50 +42,9 @@ Notes :
 
 ## Conclusion
   
-Un support très variable
-
-- Un support encore très variable...
-	- Selon html5test.com (sur 500 pts) :
-		- Chrome 21..............437 pts
-		- Chrome 20..............414 pts
-		- Opera 12...............385 pts
-		- Safari 6...............366 pts
-		- Firefox 14.............345 pts
-		- Safari 5.1.............317 pts
-		- Internet Explorer 9....138 pts
-		- Internet Explorer 8.....42 pts
-		- Internet Explorer 7.....27 pts
-		- Internet Explorer 6.....26 pts
-- Mais ça progresse ! (doucement)
-	- http://caniuse.com/
-
-Notes :
-
-
-
-
-## Conclusion
-  
-Support par navigateur
-
-![](ressources/images/09_conclusion-10000201000002E0000000DF737F922D.png)
-
-Notes :
-
-
-
-
-## Conclusion
-
-- Prévoir une stratégie de secours pour les anciens navigateurs
-	- Javascript
-	- Flash
-	- Chrome Frame for IE
-
-- Migrer sur les dernières versions disponibles
-	- En particulier en interne
-
-- La version définitive des spécifications HTML5 est prévue pour 2014
+- Un support encore variable mais quasi complet pour tous les navigateurs modernes.
+  - Prévoir une stratégie de secours pour les anciens navigateurs.
+  - Migrer sur les dernières versions disponibles des navigateurs.
 
 Notes :
 
