@@ -130,7 +130,7 @@ Notes :
 ```
 
 ```html
-<scrïpt. src="script.js"></scrïpt.>
+<scrïpt src="script.js"></scrïpt>
 ```
 
 ```javascript
