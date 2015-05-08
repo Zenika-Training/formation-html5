@@ -1,6 +1,6 @@
 Placer ici vos remarques ou comptes rendus de sessions
 
-Format de fichier proposé:
+Format de fichier proposÃ©:
 ```
 YYYYMMDD-('Inter'|<Client>)-<Agence>-<Votre nom>.md
 ```

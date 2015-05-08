@@ -50,4 +50,4 @@ Timeline Indicative :
 	TP
 	Conclusion
 
-Si il reste du temps, présenter AngularJS, EmberJs ou JQuery. Plusieurs petites présentations sont disponibles dans /Optionnel dans la formation avancée.
+S'il reste du temps, présenter AngularJS, EmberJs ou JQuery. Plusieurs petites présentations sont disponibles dans /Optionnel dans la formation avancée.
