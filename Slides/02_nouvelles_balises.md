@@ -104,14 +104,12 @@ Notes :
 
 ## Structure de document
 
-![Structure de document](ressources/structure-html.gif)
+<br />
+<!-- .element: style="display: block; float: right; width: 50%" -->
 
-Notes :
-
-
-
-
-## Structure de document
+<figure style="display: block; float: left; width: 50%; margin: 0 10px;">
+    <img src="ressources/structure-html.gif" alt="Grunt" />
+</figure>
 
 ```html
 <header>...</header>

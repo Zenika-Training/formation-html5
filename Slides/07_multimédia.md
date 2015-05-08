@@ -354,7 +354,7 @@ Notes :
 <br />
 <!-- .element: style="display: block; float: right; width: 20%" -->
 
-<figure style="display: block; float: left; width: 20%; margin: 0 10px;">
+<figure style="display: block; float: left; width: 10%; margin: 0 10px;">
     <img src="ressources/images/08_multimédia-100000000000008C0000016CB27E5F72.png" alt="Grunt" />
 </figure>
 
@@ -365,7 +365,9 @@ Notes :
   GlobalAlpha="0,6"//Transparence
   LineWidth=10//Epaisseur de ligne
   ```
-- Les méthodes `save()` et `restore()` sont particulièrement utiles, elles permettent de sauver puis de restaurer un style courant
+- Les méthodes `save()` et `restore()` sont particulièrement utiles.
+  - Elles permettent de sauver puis de restaurer un style courant
+
   ```javascript
   ctx.strokestyle="blue"; ctx.fillstyle="black";
   //Rectangle
