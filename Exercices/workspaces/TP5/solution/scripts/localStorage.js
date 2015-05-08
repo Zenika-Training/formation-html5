@@ -1,18 +1,11 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Training
- * Date: 9/3/12
- * Time: 4:05 PM
- * To change this template use File | Settings | File Templates.
- */
-
 /********fonctions du local storage*******/
 
-function save(evtId, value){
-    if(window.localStorage){
+function save(evtId, value) {
+    if (window.localStorage) {
         window.localStorage.setItem(evtId, value);
     }
 }
+
 /*
 function getAll(){
     if(window.localStorage){
@@ -23,12 +16,14 @@ function getAll(){
             //...
         }
     }
-} */
+}
+*/
 
-function deleteEvt(evtId){
-    if(window.localStorage){
+function deleteEvt(evtId) {
+    if (window.localStorage) {
         window.localStorage.removeItem(evtId);
 
     }
 }
+
 /******************************************/

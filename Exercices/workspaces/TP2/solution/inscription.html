@@ -10,12 +10,12 @@
             text-align: center;
             margin-top: 10px;
         }
-        
+
         label,
         input {
             display: block;
         }
-        
+
         input {
             box-sizing: border-box;
             padding: 5px;
@@ -27,7 +27,7 @@
             box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
             border: 1px solid #CCC;
         }
-        
+
         input[type="submit"] {
             box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
             transition: box-shadow 1s;
@@ -38,16 +38,16 @@
             background-color: #942723;
             color: white;
         }
-        
+
         input[type="submit"]:hover {
             box-shadow: 0 0 15px rgba(255, 0, 0, 1);
         }
-        
+
         input:required {
             background: url("ressources/images/star.png") no-repeat right top;
             background-size: 7px 7px;
         }
-        
+
         form {
             width: 200px;
             margin: 20px auto;
@@ -73,16 +73,16 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Index</a>
+            <li>
+                <a href="index.html">Index</a>
             </li>
-            <li><a href="inscription.html">Inscription</a>
+            <li>
+                <a href="inscription.html">Inscription</a>
             </li>
         </ul>
     </nav>
 
-    <h2>
-Formulaire d'inscription
-</h2>
+    <h2>Formulaire d'inscription</h2>
 
     <form autocomplete="on">
         <label for="nom">Nom</label>
@@ -102,8 +102,9 @@ Formulaire d'inscription
         <label for="dates">Nombre de jours</label>
         <input type="number" id="dates" min="1" max="2" value="1" oninput="prix.value=dates.value*quantity.value*120" required/>
         <label for="quantity">Quantité</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="5" value="1" oninput="prix.value=dates.value*quantity.value*120" required/> Prix total :
-        <output type="text" id="prix" name="prix">120</output> €
+        <input type="number" id="quantity" name="quantity" min="1" max="5" value="1" oninput="prix.value=dates.value*quantity.value*120" required/>
+        <p>Prix total :
+            <output type="text" id="prix" name="prix">120</output> €</p>
         <input type="submit" value="Inscription" />
     </form>
 

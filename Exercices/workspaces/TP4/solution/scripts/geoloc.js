@@ -8,25 +8,24 @@ var directionsDisplay;
 var geocoder;
 
 
-
 function updateStatus(message) {
-    document.getElementById("statut").innerHTML = message;
+    document.getElementById('statut').innerHTML = message;
 }
 
 //fonction errorCallBack appelée en cas d'erreurs rendues par la requete getCurrentPosition
 function handleError(error) {
     switch (error.code) {
     case 0:
-        updateStatus("There was an error while retrieving your location: " + error.message);
+        updateStatus('There was an error while retrieving your location: ' + error.message);
         break;
     case 1:
-        updateStatus("The user prevented this page from retrieving a location.");
+        updateStatus('The user prevented this page from retrieving a location.');
         break;
     case 2:
-        updateStatus("The browser was unable to determine your location: " + error.message);
+        updateStatus('The browser was unable to determine your location: ' + error.message);
         break;
     case 3:
-        updateStatus("The browser timed out before retrieving the location.");
+        updateStatus('The browser timed out before retrieving the location.');
         break;
     }
 }
@@ -40,14 +39,14 @@ function initialize() {
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById("mapCanvas"),
+    map = new google.maps.Map(document.getElementById('mapCanvas'),
         myOptions);
     addEventPosition();
 }
 
 //Ajoute le marker sur Zenika
 function addEventPosition() {
-    var address = "51, Rue le Peletier, Paris";
+    var address = '51, Rue le Peletier, Paris';
     geocoder.geocode({
         'address': address
     }, function (results, status) {
@@ -57,10 +56,10 @@ function addEventPosition() {
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
-                title: "Zenika"
+                title: 'Zenika'
             });
         } else {
-            alert("Geocode was not successful for the following reason: " + status);
+            alert('Geocode was not successful for the following reason: ' + status);
         }
     });
 }
@@ -82,7 +81,7 @@ function requestDirection() {
 function findDirection() {
     var directionsService = new google.maps.DirectionsService();
     var start = maPosition;
-    var end = "51, rue Le Peletier, Paris"
+    var end = '51, rue Le Peletier, Paris';
     var request = {
         origin: start,
         destination: end,
@@ -102,6 +101,6 @@ function startGeolocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(findPosition, handleError);
     } else {
-        updateStatus("HTML5 Geolocation is not supported in your browser.");
+        updateStatus('HTML5 Geolocation is not supported in your browser.');
     }
 }

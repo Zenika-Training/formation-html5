@@ -1,11 +1,11 @@
-
 /********fonctions du local storage*******/
 
-function save(evtId, value){
-    if(window.localStorage){
+function save(evtId, value) {
+    if (window.localStorage) {
         window.localStorage.setItem(evtId, value);
     }
 }
+
 /*
 function getAll(){
     if(window.localStorage){
@@ -16,12 +16,14 @@ function getAll(){
             //...
         }
     }
-} */
+}
+*/
 
-function deleteEvt(evtId){
-    if(window.localStorage){
+function deleteEvt(evtId) {
+    if (window.localStorage) {
         window.localStorage.removeItem(evtId);
 
     }
 }
+
 /******************************************/

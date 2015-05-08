@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Mon agenda</title>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
 
 </head>
 <script>
-    function displayEvt(evtId, value, tagId){
+    function displayEvt(evtId, value, tagId) {
         var article = document.createElement("article");
         article.setAttribute("id", evtId);
 
@@ -17,13 +18,14 @@
         //article.appendChild(contenu);
         document.getElementById(tagId).appendChild(article);
     }
-
 </script>
+
 <body onload="loadDataInAgenda();">
 
-<section id="my_agenda">
+    <section id="my_agenda">
 
-</section>
+    </section>
 
 </body>
+
 </html>
