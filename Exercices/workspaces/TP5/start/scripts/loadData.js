@@ -110,15 +110,14 @@ function loadConf(jsonObj) {
         var conf = jsonObj[i];
         var id = conf.id;
         var titre = conf.title;
-        var content = conf.title+", " + conf.speaker + ", "+ conf.day + " at "+ conf.time;
+        var content = conf.title + ', ' + conf.speaker + ', ' + conf.day + ' at ' + conf.time;
         var categorie = conf.category;
-        if(window.localStorage){
-            if(!localStorage.getItem(id)){
+        if (window.localStorage) {
+            if (!localStorage.getItem(id)) {
                 //display
-                displayEvt(id, content, categorie, "list_events");
-            }
-            else {
-                displayEvt(id, content, categorie, "my_events");
+                displayEvt(id, content, categorie, 'list_events');
+            } else {
+                displayEvt(id, content, categorie, 'my_events');
             }
         }
 
@@ -127,29 +126,29 @@ function loadConf(jsonObj) {
 
 function loadAgenda(jsonObj) {
 
-    for (var i=0; i<jsonObj.length; i++ ){
+    for (var i = 0; i < jsonObj.length; i++) {
         var conf = jsonObj[i];
         var id = conf.id;
         var titre = conf.title;
         var categorie = conf.category;
         var content = '<header>' + '<h2>' + conf.title + '</h2>' + '<p>' + 'par ' + conf.speaker + ', ' + conf.day + ' at ' + conf.time + '</p>' + '</header>' + '<p>' + conf.description + '</p>';
-            if(window.localStorage){
-                //liste[categorie]=0;
-            if(localStorage.getItem(id)){
+        if (window.localStorage) {
+            //liste[categorie]=0;
+            if (localStorage.getItem(id)) {
                 //display
-                displayEvt(id, content, "my_agenda");
+                displayEvt(id, content, 'my_agenda');
 
-                liste[categorie]=liste[categorie]+1;
+                liste[categorie] = liste[categorie] + 1;
             }
         }
     }
     draw();
 }
 
-function loadDataInAgenda(){
+function loadDataInAgenda() {
     loadAgenda(conference);
 }
 
-function loadData(){
+function loadData() {
     loadConf(conference);
 }
