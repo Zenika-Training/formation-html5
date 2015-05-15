@@ -19,7 +19,7 @@ Pour le TP sur le cache, allumer/éteindre le serveur permet de tester simplemen
 > A quoi servent ces nouvelles balises (header/nav/footer/time/...)? elles ne font rien de plus qu'un div...
 
 Pour la semantique de nos pages, elles sont plus lisible, seront plus référencables.
-Exp: un lecteur rss pourrait isoler le texte complet d'une page avec les balises <article>
+Exp: un lecteur rss pourrait isoler le texte complet d'une page avec les balises `<article>`
 
 > Peut on faire la validation d'un formulaire avant le click sur submit?
 
@@ -100,7 +100,7 @@ Il faut donc penser à fixer les valeurs width et height de cette `div`.
 ### TP Drag-n-drop
 
 - Attention, les navigateurs se comportent visiblement différemment.
-  - Firefox: obligation de faire un event.dataTransfer.setData pour que l'élément soit draggable.
+  - Firefox: obligation de faire un `event.dataTransfer.setData` pour que l'élément soit draggable.
 - TP Drag-n-drop: la spec indique que `ondragenter` et `ondragover` doivent être écoutés pour recevoir
 l'événement drop.
 - Attention, le thème des éléments bougés dépend aussi du thème de la machine. Sur windows, avec un thème ancien, un draggable bougé est transparent
