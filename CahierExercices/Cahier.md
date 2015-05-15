@@ -9,7 +9,7 @@
 <div class="pb"></div>
 
 
-## Structure et sémantique
+## TP1 - Structure et sémantique
 
 Dans ce premier exercice, nous allons tout d'abord mettre en forme un contenu existant (une liste d'articles) en tirant parti des nouvelles balises sémantiques de HTML5, puis nous développerons un formulaire d'inscription moderne et robuste.
 
@@ -61,7 +61,7 @@ Ajoutez également un composant de type output (type `text`), qui permettra d'af
 <div class="pb"></div>
 
 
-## CSS
+## TP2 - CSS
 
 Dans le précédent exercice, nous avons mis en place la structure des pages d'accueil et d'inscription.
 Il est maintenant temps de les rendre présentables, en leur appliquant un style graphique sympathique.
@@ -92,7 +92,7 @@ Pour la page `inscription.html` :
 <div class="pb"></div>
 
 
-## Géolocalisation et Drag'n'Drop
+## TP3 - Géolocalisation et Drag'n'Drop
 
 ### Géolocalisation
 
@@ -156,7 +156,7 @@ Astuces :
 <div class="pb"></div>
 
 
-## Local Storage et mode offline
+## TP4 - Local Storage et mode offline
 
 Maintenant que l'utilisateur a choisi les conférences auxquelles il souhaite assister, nous allons pouvoir afficher le récapitulatif dans la page `agenda.html`.
 
@@ -190,7 +190,7 @@ Ajouter la possibilité d'enregistrer les valeurs du formulaire de la page inscr
 <div class="pb"></div>
 
 
-## Multimédia et Canvas
+##  TP5 - Multimédia et Canvas
 
 Pour terminer, nous allons ajouter une dimension multimédia à notre application.
 
