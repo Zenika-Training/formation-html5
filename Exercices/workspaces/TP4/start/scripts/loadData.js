@@ -115,7 +115,7 @@ function loadConf(jsonObj) {
         var titre = conf.title;
         var content = conf.title + ', ' + conf.speaker + ', ' + conf.day + ' at ' + conf.time;
         var categorie = conf.category;
-        //TODO: afficher les évènements sauvegardés dans la colonne 'my_events' et ceux qui restent dans 'list_events' 
+        //TODO: afficher les évènements sauvegardés dans la colonne 'my_events' et ceux qui restent dans 'list_events'
         displayEvt(id, content, categorie, 'list_events');
     }
 }

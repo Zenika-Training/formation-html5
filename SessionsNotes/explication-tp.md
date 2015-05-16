@@ -108,8 +108,8 @@ l'événement drop.
 
 ### TP Cache
 
-	- cache manifest: pour toutes les sections pas d'espace: `CACHE :` => `CACHE:`
-	- Si une ressource ne peut être récupérée, aucune ne le sera
+    - cache manifest: pour toutes les sections pas d'espace: `CACHE :` => `CACHE:`
+    - Si une ressource ne peut être récupérée, aucune ne le sera
 
 ### Différences entre navigateurs
 

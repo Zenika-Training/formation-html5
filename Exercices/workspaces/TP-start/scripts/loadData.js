@@ -115,7 +115,7 @@ function loadConf(jsonObj) {
         var titre = conf.title;
         var content = conf.title + ', ' + conf.speaker + ', ' + conf.day + ' at ' + conf.time;
         var categorie = conf.category;
-        //TODO TP4: afficher les évènements sauvegardés dans la colonne 'my_events' et ceux qui restent dans 'list_events' 
+        //TODO TP4: afficher les évènements sauvegardés dans la colonne 'my_events' et ceux qui restent dans 'list_events'
         displayEvt(id, content, categorie, 'list_events');
     }
 }
@@ -131,7 +131,7 @@ function loadAgenda(jsonObj) {
         var titre = conf.title;
         var categorie = conf.category;
         var content = '<header>' + '<h2>' + conf.title + '</h2>' + '<p>' + 'par ' + conf.speaker + ', ' + conf.day + ' at ' + conf.time + '</p>' + '</header>' + '<p>' + conf.description + '</p>';
-        //TODO TP4: afficher uniquement les évènements choisis dans agenda-edit (sauvegardés dans le local storage)		
+        //TODO TP4: afficher uniquement les évènements choisis dans agenda-edit (sauvegardés dans le local storage)
         displayEvt(id, content, 'my_agenda');
 
     }

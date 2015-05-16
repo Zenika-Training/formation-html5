@@ -50,7 +50,7 @@ function startGeolocation() {
 
 //fonction successCallBack appelé par la requete getCurrentPosition
 function findPosition(position) {
-    //TODO TP3: récupérer la position courante + appel à find direction avec la position trouvée (de type LatLng)   
+    //TODO TP3: récupérer la position courante + appel à find direction avec la position trouvée (de type LatLng)
 }
 
 //trace le chemin pour aller à Zénika à partir de la position courante
