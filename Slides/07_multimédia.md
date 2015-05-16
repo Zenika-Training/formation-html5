@@ -36,7 +36,7 @@ Notes :
 ## Intégration d'une piste audio
 
 - HTML5 possède un tag natif pour embarquer des pistes audio
-	- Selon le navigateur, le code nécessaire peut varierou
+    - Selon le navigateur, le code nécessaire peut varierou
   ```html
       <audio controls="controls">
           <source src="music.mp3" type="audio/mp3" />
@@ -57,9 +57,9 @@ Notes :
 ## Intégration d'une piste audio
 
 - Plusieurs sources / codecs peuvent être spécifiés pour s'assurer de fournir un format supporté
-	- Ogg
-	- Mp3
-	- Autre 
+    - Ogg
+    - Mp3
+    - Autre
 
 - Dans le cas où le navigateur n'est pas capable de lire un des formats ou ne supporte pas la balise audio, il est possible de spécifier un message d'avertissement
 
@@ -115,9 +115,9 @@ Notes :
 ## Intégration d'une vidéo
 
 - Plusieurs sources ou codecs peuvent être spécifiés pour s'assurer de fournir un format supporté
-	- Mp4
-	- WebM
-	- Ogg
+    - Mp4
+    - WebM
+    - Ogg
 
 - Un message et/ou composant alternatif peut être défini, si le navigateur ne peut lire aucune des sources proposées
 
@@ -165,9 +165,9 @@ Notes :
 ```
 - Attention, définir la taille du canvas en CSS grossit la zone de dessin au lieu de l'agrandir
 - Le canvas utilise un système de coordonnées pour pouvoir se repérer
-	- L'origine correspond au point `X=0`, `Y=0` (En haut à gauche)
-	- La valeur maximale de X est sa largeur
-	- La valeur maximale de Y est sa hauteur
+    - L'origine correspond au point `X=0`, `Y=0` (En haut à gauche)
+    - La valeur maximale de X est sa largeur
+    - La valeur maximale de Y est sa hauteur
 
 - Par défaut, la largeur est de 300px et sa hauteur de 150px
 
@@ -242,11 +242,11 @@ Notes :
 ## Générer des images avec Canvas (Formes géométriques)
 
 ```javascript
-ctx.arc(50,50,50,0,Math.PI*2,false); 
+ctx.arc(50,50,50,0,Math.PI*2,false);
 ctx.stroke();
-ctx.arc(50,50,110,Math.PI*(1/4),(Math.PI),false); 
+ctx.arc(50,50,110,Math.PI*(1/4),(Math.PI),false);
 ctx.fill();
-ctx.arc(50,50,170,0,(Math.PI)*0.5,false); 
+ctx.arc(50,50,170,0,(Math.PI)*0.5,false);
 ctx.fill();
 ctx.arc(50,50,230,0,(Math.PI)*0.5,true);
 ctx.fill();
@@ -275,7 +275,7 @@ Notes :
 
 
 ## Générer des images avec Canvas (Formes géométriques)
-  
+
 ```javascript
 ctx.moveTo(75,25);
 ctx.quadraticCurveTo(25,25,25,62.5);
@@ -305,7 +305,7 @@ strokeText(Texte, x, y); // texte vide
 - La police et la taille utilisée se définissent avec la propriété `font`
 ```javascript
 ctx.font = "30px Arial";
-ctx.fillText("Mon texte",0,0); 
+ctx.fillText("Mon texte",0,0);
 ```
 
 Notes :
@@ -393,7 +393,7 @@ window.requestAnimationFrame(callback);
 - Pour arrêter l'animation, `cancelAnimationFrame()` est utilisé
 ```javascript
 var animId = window.requestAnimationFrame(callback);
-(...) 
+(...)
  window.cancelAnimationFrame(animId);
 ```
 - Animer le canvas en fonction d'événements souris ou clavier du javascript permet de faire des jeux

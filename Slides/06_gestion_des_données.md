@@ -99,7 +99,7 @@ Notes :
 
 
 ## Session store et Local store (Exemple)
-  
+
 ```javascript
 var storage = window.localStorage; // ou window.sessionStorage
 
@@ -141,7 +141,7 @@ Notes :
 
 - Véritable base de données embarquée
   - Gestion des transactions
-  - Gestion des mises à jour de schémas 
+  - Gestion des mises à jour de schémas
 
 - Pour créer ou ouvrir une base de données, il faut préciser ses
   - ID
@@ -180,7 +180,7 @@ Notes :
 
 
 ## Web SQL databases (Exemple)
-  
+
 ```javascript
 var db = openDatabase('mydb', '1.0', 'Books', 1024 * 1024);
 
@@ -191,7 +191,7 @@ if (db) {
         tx.executeSql("INSERT INTO BOOK (ID,NAME) VALUES (1,'Dune')");
 
         // Requêtage
-        tx.executeSql("SELECT * FROM BOOK", [], 
+        tx.executeSql("SELECT * FROM BOOK", [],
         function (tx, books) {
             window.alert(books);
         });
@@ -214,10 +214,10 @@ Notes :
 
 
 ## Web SQL databases (Conclusion)
-  
+
 - La spécification n'est plus maintenue par le W3C
-	- Pas assez d'implémentations différentes
-	- Toutes basées sur SQLite
+    - Pas assez d'implémentations différentes
+    - Toutes basées sur SQLite
 
 - Partiellement implémenté et/ou buggué
 - Ne pas utiliser !
@@ -233,11 +233,11 @@ Notes :
 
 - Spécification en remplacement de Web SQL database, dépréciée en novembre 2010 par le W3C
 - Base de données de type « object store »
-	- Pas relationnelle, pas de schéma
-	- Permet de stocker des objets javascript (json) identifiables
-	- Création d'index pour récupérer les objets suivant des propriétés
-	- APIs asynchrone et synchrone
-		- L'API synchrone est cependant peu implémentée et sujette à abandon par le W3C
+    - Pas relationnelle, pas de schéma
+    - Permet de stocker des objets javascript (json) identifiables
+    - Création d'index pour récupérer les objets suivant des propriétés
+    - APIs asynchrone et synchrone
+        - L'API synchrone est cependant peu implémentée et sujette à abandon par le W3C
 - Support : chrome 11+, Firefox 4+, IE 10
 
 ```javascript
@@ -250,7 +250,7 @@ Notes :
 
 
 ## Web databases (IndexedDB - création)
-  
+
 - Création/ouverture de la base
 ```javascript
 var request = indexedDB.open('AddressBook' , 1); //version 1
@@ -270,8 +270,8 @@ request.onerror = function(evt) {
 - Création d'un objet
 ```javascript
 var contact = db.createObjectStore(
-    'contact', 
-    {keyPath:'id', autoIncrement:true} 
+    'contact',
+    {keyPath:'id', autoIncrement:true}
 );
 ```
 
@@ -298,8 +298,8 @@ var contact1 = store.add({name: 'Joe', email: 'joe@mail.com'});
   - Récupération d'objet avec une clé
 ```javascript
 var object = store.get(1);
-    object.onsuccess = function(evt) { 
-    var object_name = request.result.name; 
+    object.onsuccess = function(evt) {
+    var object_name = request.result.name;
 };
 ```
 
@@ -309,7 +309,7 @@ Notes :
 
 
 ## Web databases (IndexedDB)
-  
+
 - Résultat : outils de développement chrome
 
 - Conclusion
@@ -362,9 +362,9 @@ Notes :
 ## Application déconnectées (Le Manifeste)
 
 - Un Manifeste liste les ressources à mettre en cache
-	- Fichier texte brut
-	- Extension .appcache
-	- Déclaré au niveau de la balise  `<html>`
+    - Fichier texte brut
+    - Extension .appcache
+    - Déclaré au niveau de la balise  `<html>`
 
 - Toutes les pages de l'application devant fonctionner offline référencent le même manifeste
 
@@ -378,13 +378,13 @@ Notes :
 
 
 ## Application déconnectées (Le Manifeste - structure)
-  
+
 - En-tête `CACHE MANIFEST`
-- Section `CACHE` obligatoire  
+- Section `CACHE` obligatoire
 Liste des ressources à mettre en cache
-- Section `FALLBACK` optionnelle  
+- Section `FALLBACK` optionnelle
 Liste des ressources alternatives, à utiliser si les ressources réseau ne sont pas disponibles
-- Section `NETWORK` optionnelle  
+- Section `NETWORK` optionnelle
 Liste des ressources devant être systématiquement accédées en ligne
 
 Notes :
@@ -393,7 +393,7 @@ Notes :
 
 
 ## Application déconnectées (Le Manifeste - exemple)
-  
+
 ```
 CACHE MANIFEST
 
@@ -457,7 +457,7 @@ Notes :
 
 - Attention à ne pas mettre le manifeste lui-même en cache !
   - Ajouter un commentaire qui change à chaque version
-  
+
   ```txt
   CACHE MANIFEST
   # 2012-08-01 14:00
@@ -467,7 +467,7 @@ Notes :
 
   ```
   - Apache httpd
-  
+
   ```
   <IfModule mod_expires.c>
   ExpiresActive On

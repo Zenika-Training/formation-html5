@@ -27,13 +27,13 @@ Notes :
 - HTML 5 est une avancée majeure par rapport à HTML 4
 
 - Des nouveautés dans tous les domaines
-	- Web sémantique
-	- Style graphique amélioré
-	- Bases de données locales
-	- Mode déconnecté
-	- Interactivité
-	- Multimédia sans plug-in
-	- Et bien plus encore ! (cf. "HTML5 Avancé")
+    - Web sémantique
+    - Style graphique amélioré
+    - Bases de données locales
+    - Mode déconnecté
+    - Interactivité
+    - Multimédia sans plug-in
+    - Et bien plus encore ! (cf. "HTML5 Avancé")
 
 Notes :
 
@@ -41,7 +41,7 @@ Notes :
 
 
 ## Conclusion
-  
+
 - Un support encore variable mais quasi complet pour tous les navigateurs modernes.
   - Prévoir une stratégie de secours pour les anciens navigateurs.
   - Migrer sur les dernières versions disponibles des navigateurs.
@@ -54,18 +54,18 @@ Notes :
 ## A suivre
 
 - Frameworks HTML5
-	- HTML5 boilerplate
-	- Sencha Touch
-	- Atmosphere
+    - HTML5 boilerplate
+    - Sencha Touch
+    - Atmosphere
 
 - Modernizr : permet de faciliter la détection des fonctionnalités et le fallback
 - Les autres APIs
-	- Historique et navigation
-	- Communication API et Server Sent Events
-	- WebSocket
-	- Web workers
-	- XmlHttpRequest 2
-	- ...
+    - Historique et navigation
+    - Communication API et Server Sent Events
+    - WebSocket
+    - Web workers
+    - XmlHttpRequest 2
+    - ...
 
 Notes :
 

@@ -123,7 +123,7 @@ Il nous faudra pour cela utiliser l'API Google Maps ; le script `geoloc.js` cont
 
 ### Drag & Drop
 
-La conférence propose un certain nombre de sujets, parmi lesquels l'utilisateur doit choisir. 
+La conférence propose un certain nombre de sujets, parmi lesquels l'utilisateur doit choisir.
 Pour cela, nous allons lui proposer une interface de type drag&drop, très intuitive.
 
 Nous allons créer 2 pages :

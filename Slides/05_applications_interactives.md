@@ -35,8 +35,8 @@ Notes :
 ## Géolocalisation
 
 - La géolocalisation permet de connaître la localisation de l'utilisateur
-	- Marketing de proximité
-	- Communautés
+    - Marketing de proximité
+    - Communautés
 - Nécessite l'accord de l'utilisateur
 
 ![](ressources/images/06_applications_interactives-10000201000001F0000000A9385BE2CA.png)
@@ -54,7 +54,7 @@ Notes :
     <img src="ressources/images/06_applications_interactives-1000020100000080000000809F5B811C.png" alt="Geo" />
 </figure>
 
-- La localisation est déterminée grâce 
+- La localisation est déterminée grâce
   - au GPS des appareils mobiles
   - à une triangulation GSM/3G
   - l'adresse IP du point de connexion
@@ -150,7 +150,7 @@ function onSuccess(pos) {
     var lng = pos.coords.longitude;
     var latlng = lat + "," + lng;
 
-    var mapUrl = 
+    var mapUrl =
     "http://maps.googleapis.com/maps/api/staticmap"+
     "?center="+latlng+
     "&zoom=14&size=400x300&sensor=false"
@@ -168,7 +168,7 @@ Notes :
 ## Géolocalisation
 
 - Pour une carte dynamique, il faut utiliser les API Google Maps
-	- Affichage sur une carte dans une div d'id `mapCanvas` 
+    - Affichage sur une carte dans une div d'id `mapCanvas`
 
 `<sc ript src="http://maps.google.com/maps/api/js?sensor=true"></sc ript>`
 
@@ -207,9 +207,9 @@ Notes :
 
 - Le drag'n'drop ("glisser-déposer" selon la terminologie officielle) est un geste naturel
 
-- Deux cas d'utilisation 
-	- Déplacement d'éléments au sein du navigateur
-	- Déplacement d'éléments externes vers le navigateur 
+- Deux cas d'utilisation
+    - Déplacement d'éléments au sein du navigateur
+    - Déplacement d'éléments externes vers le navigateur
 
 ![](ressources/images/06_applications_interactives-10000201000002A100000143A638AAF9.png)
 
@@ -221,7 +221,7 @@ Notes :
 ## Drag'n'drop
 
 - Tout élément peut être déplacé
-	- Il suffit de lui ajouter l'attribut "draggable"
+    - Il suffit de lui ajouter l'attribut "draggable"
 - Tout élément peut servir de zone de réception ("drop")
 
 ```html
@@ -236,17 +236,17 @@ Notes :
 
 
 ## Drag'n'drop (Événements)
-  
+
 - Événements relatifs à l'élément déplacé
-	- `dragstart` : début de l'action
-	- `drag` : action en cours
-	- `dragend` : fin de l'action
+    - `dragstart` : début de l'action
+    - `drag` : action en cours
+    - `dragend` : fin de l'action
 
 - Événements relatifs à l'élément récepteur
-	- `dragenter` : début de survol
-	- `dragover` : survol en cours
-	- `dragleave` : fin de survol
-	- `drop` : élément lâché 
+    - `dragenter` : début de survol
+    - `dragover` : survol en cours
+    - `dragleave` : fin de survol
+    - `drop` : élément lâché
 
 ```javascript
     <element>.on<event> = function() { … }
@@ -258,7 +258,7 @@ Notes :
 
 
 ## Drag'n'drop (Événements – exemple)
-  
+
 - Configuration de l'élément déplacé
 
 ```javascript
@@ -285,7 +285,7 @@ Notes :
 ## Drag'n'drop (Événements – exemple)
 
 - Configuration de la zone de réception
-	- Par défaut, les éléments ne supportent pas le "drop" ; il faut désactiver ce comportement sur l'événement ondragover
+    - Par défaut, les éléments ne supportent pas le "drop" ; il faut désactiver ce comportement sur l'événement ondragover
 
 ```javascript
 var dropzone = document.getElementById("dropzone");
@@ -319,10 +319,10 @@ Notes :
 
 - Il est possible d'associer des méta-données à l'élément déplacé
 - Propriété dataTransfer de l'événement de drag'n'drop
-	- `setData(mime-type, value)`
-	- `getData(mime-type)`
-	- `clearData(mime-type)`
-	- types : mime-types des données transmises (tableau)
+    - `setData(mime-type, value)`
+    - `getData(mime-type)`
+    - `clearData(mime-type)`
+    - types : mime-types des données transmises (tableau)
 
 ```javascript
 item.ondragstart = function(e) {
@@ -368,13 +368,13 @@ Notes :
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 - Pour obtenir d'avantage d'informations sur les fichiers, il faut utiliser l'API FileReader
-	- `readAsDataURL(file)` : renvoie l'URL complète du fichier
-	- `readAsBinaryString(file)` : lit le fichier en binaire
-	- `readAsText(file, [charset])` : lit le fichier en UTF8
+    - `readAsDataURL(file)` : renvoie l'URL complète du fichier
+    - `readAsBinaryString(file)` : lit le fichier en binaire
+    - `readAsText(file, [charset])` : lit le fichier en UTF8
 
 - La progression est monitorée par des méthodes callback
-	- `onabort()`, `onerror()`, `onload()`, `onprogress()`
-	- Paramètre de type `ProgressEvent` contenant le résultat
+    - `onabort()`, `onerror()`, `onload()`, `onprogress()`
+    - Paramètre de type `ProgressEvent` contenant le résultat
 
 ```javascript
 reader.onload = function(e) {
@@ -406,7 +406,7 @@ zone.ondrop = function(e) {
         };
         reader.readAsDataURL(file);
     }
-    
+
     return false;
 };
 ```

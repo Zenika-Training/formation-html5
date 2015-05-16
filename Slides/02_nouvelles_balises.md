@@ -227,8 +227,8 @@ Notes :
   - De nouveaux éléments : `output`, `datalist`
 
 <form>
-  <input type="number" 
-    required min="10" step="5" 
+  <input type="number"
+    required min="10" step="5"
     placeholder="Saisir un nombre >= 10"/>
   <button type="submit">OK</button>
 </form>
@@ -480,9 +480,9 @@ Notes :
 </form>
 
 ```html
-<form 
+<form
   oninput="result.value = parseInt(a.value) + parseInt(b.value)">
-  
+
 <input type="number" name="a" value="0"/>
 + <input type="number" name="b" value="0"/>
 = <output for="a b" name="result"/>
