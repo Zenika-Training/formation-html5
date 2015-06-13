@@ -21,7 +21,6 @@ Notes :
 
 
 
-
 ## Les points clés du javascript
 
 - En Javascript, presque tout est objet (`Array`, `String`, `Function`...)
@@ -33,7 +32,6 @@ Notes :
 	- Les bons outils pour travailler / débugger
 
 Notes :
-
 
 
 
@@ -63,7 +61,6 @@ Notes :
 
 
 
-
 ## Scope des variables
 
 - La portée ("scope") d'une variable détermine sa visibilité au sein du programme
@@ -76,7 +73,6 @@ Notes :
 - Mot-clé `var`
 
 Notes :
-
 
 
 
@@ -107,7 +103,6 @@ Notes :
 
 
 
-
 ## Comparer des objets et variables
 
 - Javascript offre deux façons de comparer des valeurs
@@ -125,7 +120,6 @@ Notes :
 ```
 
 Notes :
-
 
 
 
@@ -151,7 +145,6 @@ Notes :
 
 
 
-
 ## Fonctions et variables implicites
 
 - Les fonctions définissent dans leur contexte 2 variables implicites
@@ -168,7 +161,6 @@ function f() {
 Contrairement au `this` des langages objets traditionnels, le `this` de Javascript dépend de la façon dont la fonction est appelée.
 
 Notes :
-
 
 
 
@@ -198,7 +190,6 @@ Notes :
 
 
 
-
 ## Fonctions et variables implicites
 
 - Le type de fonction détermine le contexte vu par this 
@@ -220,7 +211,6 @@ Notes :
 
 
 
-
 ## Debug et outils de qualité
 
 - Webkit developer tools : disponible sur tous les navigateurs basés sur Webkit (Chrome, Safari)
@@ -233,13 +223,11 @@ Notes :
 
 
 
-
 ## Chrome DevTools – Elements
 
 ![](ressources/images/05_javascript-10000201000003FC00000309EE1D3A9E.png)
 
 Notes :
-
 
 
 
@@ -258,13 +246,11 @@ Notes :
 
 
 
-
 ## Chrome DevTools – Resources
 
 ![](ressources/images/05_javascript-10000201000003FC00000309592972CB.png)
 
 Notes :
-
 
 
 
@@ -278,7 +264,6 @@ Notes :
     - Images
     
 Notes :
-
 
 
 
@@ -297,13 +282,11 @@ Notes :
 
 
 
-
 ## Chrome DevTools – Network
 
 ![](ressources/images/05_javascript-10000201000003FC00000309701715B5.png)
 
 Notes :
-
 
 
 
@@ -320,7 +303,6 @@ Notes :
 
 
 
-
 ## Chrome DevTools – Network
 
 - Nombreuses options accessibles via clic droit
@@ -333,13 +315,11 @@ Notes :
 
 
 
-
 ## Chrome DevTools – Sources
 
 ![](ressources/images/05_javascript-10000201000003FC00000309DD3DF68B.png)
 
 Notes :
-
 
 
 
@@ -360,13 +340,11 @@ Notes :
 
 
 
-
 ## Chrome DevTools – Console
 
 ![](ressources/images/05_javascript-10000201000003FC000003092A54A265.png)
 
 Notes :
-
 
 
 
@@ -382,13 +360,11 @@ Notes :
 
 
 
-
 ## Chrome DevTools – General
 
 ![](ressources/images/05_javascript-10000201000003FC00000309179EC511.png)
 
 Notes :
-
 
 
 
@@ -408,13 +384,11 @@ Notes :
 
 
 
-
 ## Chrome Urls
 
 ![](ressources/images/05_javascript-10000201000003FE0000035D3E36474B.png)
 
 Notes :
-
 
 
 
@@ -429,7 +403,6 @@ Notes :
     - [chrome://webrtc-internals](chrome://webrtc-internals)
 
 Notes :
-
 
 
 

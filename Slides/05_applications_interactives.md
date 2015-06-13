@@ -21,14 +21,12 @@ Notes :
 
 
 
-
 ## Plan
 
 - Géolocalisation
 - Drag'n'drop
 
 Notes :
-
 
 
 
@@ -42,7 +40,6 @@ Notes :
 ![](ressources/images/06_applications_interactives-10000201000001F0000000A9385BE2CA.png)
 
 Notes :
-
 
 
 
@@ -75,7 +72,6 @@ Notes :
 
 
 
-
 ## Géolocalisation
 
 - Deux méthodes pour récupérer la position
@@ -93,7 +89,6 @@ Notes :
 
 
 
-
 ## Géolocalisation
 
 - En cas de succès, les fonctions renvoient la même structure Position contenant les coordonnées (attribut coords) et un timestamp :
@@ -107,7 +102,6 @@ Notes :
   - `timestamp`
 
 Notes :
-
 
 
 
@@ -137,7 +131,6 @@ Notes :
 
 
 
-
 ## Géolocalisation
 
 - Affichage de la position sur une carte statique Google Maps
@@ -161,7 +154,6 @@ function onSuccess(pos) {
 ```
 
 Notes :
-
 
 
 
@@ -193,13 +185,11 @@ Notes :
 
 
 
-
 ## Géolocalisation
 
 <iframe src="http://caniuse.com/#feat=geolocation" width="100%" height="75%"></iframe>
 
 Notes :
-
 
 
 
@@ -217,7 +207,6 @@ Notes :
 
 
 
-
 ## Drag'n'drop
 
 - Tout élément peut être déplacé
@@ -231,7 +220,6 @@ Notes :
 ![](ressources/images/06_applications_interactives-100002010000016F000000D057DACE46.png)
 
 Notes :
-
 
 
 
@@ -256,7 +244,6 @@ Notes :
 
 
 
-
 ## Drag'n'drop (Événements – exemple)
 
 - Configuration de l'élément déplacé
@@ -278,7 +265,6 @@ item.ondragend = function(e) {
 ```
 
 Notes :
-
 
 
 
@@ -314,7 +300,6 @@ Notes :
 
 
 
-
 ## Drag'n'drop (Transfert de données intra-navigateur)
 
 - Il est possible d'associer des méta-données à l'élément déplacé
@@ -336,7 +321,6 @@ zone.ondrop = function(e) {
 ```
 
 Notes :
-
 
 
 
@@ -364,7 +348,6 @@ Notes :
 
 
 
-
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 - Pour obtenir d'avantage d'informations sur les fichiers, il faut utiliser l'API FileReader
@@ -384,7 +367,6 @@ reader.onload = function(e) {
 ```
 
 Notes :
-
 
 
 
@@ -415,7 +397,6 @@ Notes :
 
 
 
-
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 ![](ressources/images/06_applications_interactives-1000020100000192000000FE4505E91C.png)
@@ -423,7 +404,6 @@ Notes :
 ![](ressources/images/06_applications_interactives-1000020100000192000000FABE4C6277.png)
 
 Notes :
-
 
 
 
@@ -435,13 +415,11 @@ Notes :
 
 
 
-
 ## Drag'n'drop (Transfert de fichiers vers le navigateur)
 
 <iframe src="http://caniuse.com/#feat=filereader" width="100%" height="75%"></iframe>
 
 Notes :
-
 
 
 

@@ -21,7 +21,6 @@ Notes :
 
 
 
-
 ## Conclusion
 
 - HTML 5 est une avancée majeure par rapport à HTML 4
@@ -39,7 +38,6 @@ Notes :
 
 
 
-
 ## Conclusion
 
 - Un support encore variable mais quasi complet pour tous les navigateurs modernes.
@@ -47,7 +45,6 @@ Notes :
   - Migrer sur les dernières versions disponibles des navigateurs.
 
 Notes :
-
 
 
 
@@ -68,7 +65,6 @@ Notes :
     - ...
 
 Notes :
-
 
 
 

@@ -21,7 +21,6 @@ Notes :
 
 
 
-
 ## Plan
 
 - Session store et Local store
@@ -29,7 +28,6 @@ Notes :
 - Applications déconnectées avec Application Cache
 
 Notes :
-
 
 
 
@@ -55,7 +53,6 @@ Notes :
 
 
 
-
 ## Session store et Local store
 
 - Les deux Stores proposent la même API
@@ -77,7 +74,6 @@ Notes :
 
 
 
-
 ## Session store et Local store (Exemple)
 
 ```html
@@ -94,7 +90,6 @@ Notes :
 ![](ressources/images/07_gestion_des_données-1000020100000125000000BC9D734E62.png)
 
 Notes :
-
 
 
 
@@ -127,13 +122,11 @@ Notes :
 
 
 
-
 ## Session store et Local store (Exemple)
 
 ![](ressources/images/07_gestion_des_données-10000201000002F30000020540728254.png)
 
 Notes :
-
 
 
 
@@ -159,7 +152,6 @@ Notes :
 
 
 
-
 ## Web SQL databases (Transactions)
 
 - Gestion des transactions
@@ -175,7 +167,6 @@ Notes :
   ```
 
 Notes :
-
 
 
 
@@ -203,13 +194,11 @@ Notes :
 
 
 
-
 ## Web SQL databases (Exemple)
 
 ![](ressources/images/07_gestion_des_données-10000201000001F9000000CFA5E4A384.png)
 
 Notes :
-
 
 
 
@@ -225,7 +214,6 @@ Notes :
 ![](ressources/images/07_gestion_des_données-1000020100000080000000802D752439.png)
 
 Notes :
-
 
 
 
@@ -245,7 +233,6 @@ var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedD
 ```
 
 Notes :
-
 
 
 
@@ -279,7 +266,6 @@ Notes :
 
 
 
-
 ## Web databases (IndexedDB – transaction et opérations)
 
 - Création d'index
@@ -307,7 +293,6 @@ Notes :
 
 
 
-
 ## Web databases (IndexedDB)
 
 - Résultat : outils de développement chrome
@@ -320,7 +305,6 @@ Notes :
 ![](ressources/images/07_gestion_des_données-10000000000002B1000001002FCC5DFA.png)
 
 Notes :
-
 
 
 
@@ -376,7 +360,6 @@ Notes :
 
 
 
-
 ## Application déconnectées (Le Manifeste - structure)
 
 - En-tête `CACHE MANIFEST`
@@ -388,7 +371,6 @@ Liste des ressources alternatives, à utiliser si les ressources réseau ne sont
 Liste des ressources devant être systématiquement accédées en ligne
 
 Notes :
-
 
 
 
@@ -415,7 +397,6 @@ Notes :
 
 
 
-
 ## Application déconnectées (Le Manifeste - astuces)
 
 - Chaque page HTML référençant un manifeste est automatiquement mise en cache
@@ -429,7 +410,6 @@ FALLBACK :
 ```
 
 Notes :
-
 
 
 
@@ -449,7 +429,6 @@ AddType text/cache-manifest .appcache
 ```
 
 Notes :
-
 
 
 
@@ -476,7 +455,6 @@ Notes :
   ```
 
 Notes :
-
 
 
 

@@ -30,7 +30,6 @@ Notes :
 
 
 
-
 ## Logistique
 
 * Horaires

@@ -21,7 +21,6 @@ Notes :
 
 
 
-
 ## Un petit peu d'histoire
 
 - 1989 : Naissance de l'HyperText Markup Language
@@ -32,7 +31,6 @@ Notes :
 - 2004 : Création du WHATWG, Web Hypertext Application Technology Working Group, reprend la spécification HTML
 
 Notes :
-
 
 
 
@@ -47,13 +45,11 @@ Notes :
 
 
 
-
 ## "HTML5" : HTML5 + JavaScript + CSS3
 
 ![Logos du web](ressources/logos-web.png)
 
 Notes :
-
 
 
 
@@ -68,7 +64,6 @@ Notes :
 <iframe src="http://html5test.com/" width="100%" height="30%"></iframe>
 
 Notes :
-
 
 
 
@@ -95,7 +90,6 @@ Notes :
 
 
 
-
 ## CSS
 
 - CSS (Cascading Style Sheets) : feuilles de styles en cascade
@@ -113,7 +107,6 @@ p {
 ```
 
 Notes :
-
 
 
 
@@ -139,7 +132,6 @@ paragraph1.innerHTML("hello world");
 ```
 
 Notes :
-
 
 
 

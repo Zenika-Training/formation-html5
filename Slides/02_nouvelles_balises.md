@@ -21,7 +21,6 @@ Notes :
 
 
 
-
 ## Un Doctype simplifié
 
 - HTML5 utilise un tout nouveau DOCTYPE simplifié
@@ -32,7 +31,6 @@ Notes :
 ```
 
 Notes :
-
 
 
 
@@ -50,7 +48,6 @@ Notes :
 
 
 
-
 ## Balises obsolètes
 
 - Obsolètes car elles limitent l'accessibilité
@@ -65,7 +62,6 @@ Notes :
   - `<dir>` → `<ul>`
 
 Notes :
-
 
 
 
@@ -87,7 +83,6 @@ Notes :
 
 
 
-
 ## Structure de document
 
 - `section` : conteneur générique, visant à grouper les éléments relatifs à un sujet donné
@@ -98,7 +93,6 @@ Notes :
 - `nav` : éléments de navigation intra- ou inter-documents
 
 Notes :
-
 
 
 
@@ -114,7 +108,7 @@ Notes :
 ```html
 <header>...</header>
 
-<aside>...</aside>
+<nav>...</nav>
 
 <section>
   <header>...</header>
@@ -122,13 +116,13 @@ Notes :
   <article>...</article>
   <article>...</article>
   <footer>...</footer>
+  <aside>...</aside>
 </section>
 
 <footer>...</footer>
 ```
 
 Notes :
-
 
 
 
@@ -153,7 +147,6 @@ Notes :
 
 
 
-
 ## Marqueurs de texte
 
 - `mark` : attire l'attention sur un extrait de texte, par exemple le résultat d'une recherche, ou un extrait de texte intéressant
@@ -170,7 +163,6 @@ Cette formation vous est présentée par <mark>Zenika</mark>
 ```
 
 Notes :
-
 
 
 
@@ -197,7 +189,6 @@ Notes :
 
 
 
-
 ## Autres
 
 - Attributs de données personnalisés : `data-*`
@@ -215,7 +206,6 @@ document.getElementById('picture1').dataset('fullpath'));
 ```
 
 Notes :
-
 
 
 
@@ -243,7 +233,6 @@ Notes :
 
 
 
-
 ## Formulaires - Nouveaux champs
 
 - Certains champs de saisie se différencient graphiquement
@@ -254,7 +243,6 @@ Notes :
   - `<input type="range"/>` <input type="range"/>
 
 Notes :
-
 
 
 
@@ -269,7 +257,6 @@ Notes :
 - Cela permet également de charger les claviers correspondants sur des systèmes mobiles
 
 Notes :
-
 
 
 
@@ -302,7 +289,6 @@ Notes :
 
 
 
-
 ## Formulaires - Validation
 
 - Minimum, maximum <input type="number" min="3" max="9"/>&nbsp;<input type="date" max="2012-06-21"/>
@@ -325,7 +311,6 @@ Notes :
 
 
 
-
 ## Formulaires - Validation
 
 - Validation par expression régulière
@@ -342,7 +327,6 @@ Notes :
 <input type="number" placeholder="Entrez votre âge" />
 
 Notes :
-
 
 
 
@@ -364,7 +348,6 @@ Notes :
 
 
 
-
 ## Formulaires - Validation
 
 - Indication si un champ est requis, bloquant l'envoi des valeurs si aucun contenu n'est présent
@@ -382,7 +365,6 @@ Notes :
 ```
 
 Notes :
-
 
 
 
@@ -409,7 +391,6 @@ Notes :
 
 
 
-
 ## Formulaires - Validation
 
 ```html
@@ -431,7 +412,6 @@ Notes :
 ```
 
 Notes :
-
 
 
 
@@ -464,7 +444,6 @@ Notes :
 - Attention, les listes peuvent servir à guider l'utilisateur,mais ne l'empêchent pas de saisir d'autres valeurs !
 
 Notes :
-
 
 
 

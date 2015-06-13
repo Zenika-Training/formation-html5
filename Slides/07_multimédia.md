@@ -21,7 +21,6 @@ Notes :
 
 
 
-
 ## Plan
 
 - Intégration d'une piste audio
@@ -29,7 +28,6 @@ Notes :
 - Utilisation du canvas
 
 Notes :
-
 
 
 
@@ -50,7 +48,6 @@ Notes :
 ![](ressources/images/08_multimédia-100000000000013D00000031B191CCA0.png)
 
 Notes :
-
 
 
 
@@ -75,7 +72,6 @@ Notes :
 
 
 
-
 ## Intération avec une piste audio
 
 - La lecture de la piste peut être contrôlée par une API javascript
@@ -95,7 +91,6 @@ Notes :
 
 
 
-
 ## Intégration d'une vidéo
 
 - HTML5 possède un tag natif pour la lecture de vidéos
@@ -108,7 +103,6 @@ Notes :
 ![](ressources/images/08_multimédia-10000000000001A9000000F14E83EB17.png)
 
 Notes :
-
 
 
 
@@ -136,7 +130,6 @@ Notes :
 
 
 
-
 ## Intégration d'une vidéo
 
 - Une API javascript permet d'agir sur la vidéo
@@ -156,7 +149,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas
 
 - L'élément canvas est utilisé pour obtenir une zone de dessin que l'on contrôle avec une API spécifique
@@ -172,7 +164,6 @@ Notes :
 - Par défaut, la largeur est de 300px et sa hauteur de 150px
 
 Notes :
-
 
 
 
@@ -197,7 +188,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas (Formes géométriques)
 
 - Lignes en définissant un point d'origine et un point d'arrivée
@@ -219,7 +209,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas (Formes géométriques)
 
 - Cercles ou arc de cercles
@@ -235,7 +224,6 @@ var radians = (Math.PI/180)*degres
 ```
 
 Notes :
-
 
 
 
@@ -258,7 +246,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas (Formes géométriques)
 
 - Pour des formes plus complexes, il existe les courbes de bézier et les courbes quadratiques qui sont un peu plus complexes d'utilisation
@@ -270,7 +257,6 @@ bezierCurveTo(ctlX1, ctlY1, ctlX2, ctlY2, x, y)
 ```
 
 Notes :
-
 
 
 
@@ -293,7 +279,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas (Texte)
 
 - Il est possible d'ajouter du texte, rempli ou non
@@ -309,7 +294,6 @@ ctx.fillText("Mon texte",0,0);
 ```
 
 Notes :
-
 
 
 
@@ -337,7 +321,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas (Images)
 
 `drawImage(src, sX, sY, sLargeur, sHauteur, dX, dY, dLargeur, dHauteur);`
@@ -345,7 +328,6 @@ Notes :
 ![](ressources/images/08_multimédia-100000000000012C00000122B0DA9752.jpg)
 
 Notes :
-
 
 
 
@@ -382,7 +364,6 @@ Notes :
 
 
 
-
 ## Générer des images avec Canvas (Animation)
 
 - Animer le canvas, c'est possible !
@@ -399,7 +380,6 @@ var animId = window.requestAnimationFrame(callback);
 - Animer le canvas en fonction d'événements souris ou clavier du javascript permet de faire des jeux
 
 Notes :
-
 
 
 
