@@ -4,8 +4,8 @@
   "description": "Formations HTML5 En Pratique et Avancée",
   "author": "Zenika",
   "repository": {
-	"type": "git",
-	"url": "https://github.com/Zenika/Formation--Modele"
+    "type": "git",
+    "url": "https://github.com/Zenika/Formation--Modele"
   },
   "private": true,
   "dependencies": {
