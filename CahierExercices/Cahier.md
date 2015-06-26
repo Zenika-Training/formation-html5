@@ -1,7 +1,13 @@
+<br><br><br><br><br><br><br><br>
+
 ![Zenika](ressources/images/logo-html5.png)
+
+<br><br><br><br><br><br><br>
 
 # HTML 5 en pratique
 # Cahier de TP
+
+<br><br><br><br><br><br>
 
 ![Zenika](ressources/images/logo-zenika.jpg)
 
