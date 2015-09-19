@@ -1,2 +1,5 @@
-/node_modules
-/PDF
+node_modules
+.idea
+PDF
+dist
+.DS_Store

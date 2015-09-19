@@ -1,17 +1,9 @@
-<br><br><br><br><br><br><br><br>
-
-![Zenika](ressources/images/logo-html5.png)
-
-<br><br><br><br><br><br><br>
-
-# HTML 5 en pratique
-# Cahier de TP
-
-<br><br><br><br><br><br>
-
-![Zenika](ressources/images/logo-zenika.jpg)
-
-
+<div style="height:24.7cm; position: relative; border: 1px solid black; background: transparent url('ressources/images/logo-html5.png') no-repeat scroll center center;">
+    <h1 style="position:absolute; top: 10%; width:100%; text-align: center;"><img src="ressources/images/logo-html5.png"></h1>
+    <h1 style="position:absolute; top: 70%; width:100%; text-align: center;">{Titre-Formation}</h1>
+    <h1 style="position:absolute; top: 80%; width:100%; text-align: center;">Travaux Pratiques</h1>
+    <img src="ressources/logo-zenika-small.png" style="position: absolute; bottom: 20px; right: 20px; height: 150px;">
+</div>
 <div class="pb"></div>
 
 

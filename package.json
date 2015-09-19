@@ -3,13 +3,19 @@
   "version": "0.1.0",
   "description": "Formations HTML5 En Pratique et Avancée",
   "author": "Zenika",
+  "homepage": "http://www.zenika.com/formation-html5.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zenika/Formation--Modele"
+    "url": "https://github.com:ldez/formation-html5"
   },
   "private": true,
   "dependencies": {
     "grunt": "^0.4.5",
-    "zenika-formation-framework": "git+https://github.com/Zenika/Formation--Framework.git#tags/0.3.4"
+    "zenika-formation-framework": "git+https://github.com/Zenika/Formation--Framework.git#tags/0.4.1"
+  },
+  "config": {
+    "deploy": {
+      "name": "zen-formation-html5"
+    }
   }
 }
