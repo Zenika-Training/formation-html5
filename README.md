@@ -34,16 +34,18 @@ Exécuter la commande suivante :
 Pour ceux qui veulent se passer de l'installation de `node` et `npm`, et qui ont `docker`, il suffit de lancer une des commandes suivantes : <br>
 
 ### Linux
-  ./run.sh dev   # pour afficher les slides
-  ./run.sh prod  # pour afficher la page de garde
-  ./run.sh pdf   # pour générer les `.pdf` des slides
-  ./run.sh clean # pour terminer le conteneur Docker
+
+    ./run.sh dev   # pour afficher les slides
+    ./run.sh prod  # pour afficher la page de garde
+    ./run.sh pdf   # pour générer les `.pdf` des slides
+    ./run.sh clean # pour terminer le conteneur Docker
 
 ### Windows
-  ./run.bat dev   # pour afficher les slides
-  ./run.bat prod  # pour afficher la page de garde
-  ./run.bat pdf   # pour générer les `.pdf` des slides
-  ./run.bat clean # pour terminer le conteneur Docker
+
+    ./run.bat dev   # pour afficher les slides
+    ./run.bat prod  # pour afficher la page de garde
+    ./run.bat pdf   # pour générer les `.pdf` des slides
+    ./run.bat clean # pour terminer le conteneur Docker
 
 ## Utilisation avec dformation
 
